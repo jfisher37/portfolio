@@ -13,6 +13,7 @@ const navSmallSelectEl = document.getElementById("menu-select-s");
 
 let activeLink = "about";
 // let prevLink = "about";
+let initWidth =  window.innerWidth;
 
 // const generateTinyNav = () => {
 //     return navTiny();
@@ -20,14 +21,13 @@ let activeLink = "about";
 // }
 
 const mainBig = () => {
-
   switch (activeLink) {
     case "about":
       return about();
     case "work":
-        return work();
+      return work();
     case "contact":
-        return contact();
+      return contact();
     // case "nav-tiny":
     //     return navTiny();
     // case "close-nav-tiny":
@@ -45,74 +45,93 @@ const mainSmall = () => {
     // case "work":
     //     return workSmall();
     // case "contact":
-        // return contactSmall();
+    // return contactSmall();
     default:
       break;
   }
 };
 
 const toggleTinyNavSelector = () => {
-    if (navSmallSelectEl.dataset.loc === "nav-tiny"){
-        navSmallSelectEl.removeAttribute("data-loc");
-        navSmallSelectEl.setAttribute("data-loc", "close-nav-tiny");
-    } else {
-        navSmallSelectEl.removeAttribute("data-loc");
-        navSmallSelectEl.setAttribute("data-loc", "nav-tiny");
-    }
-}
-
-const linksForBig = (link) => {
-    activeLink = link.dataset.loc;
-    mainEl.innerHTML = mainBig();
-    if (activeLink === "nav-tiny"){
-        linkEls = document.querySelectorAll(".nav-link");
-        generateLinks();
-        activeLink = ""
-    }
-    console.log(linkEls);
-}
-
-const linksForSmall = (link) => {
-    if (link.dataset.loc !== "close-nav-tiny" && link.dataset.loc !== "nav-tiny"){
-        console.log("reg")
-    activeLink = link.dataset.loc;
-    mainEl.innerHTML = mainBig();
-    toggleTinyNavSelector();
+  if (navSmallSelectEl.dataset.loc === "nav-tiny") {
+    // navSmallSelectEl.removeAttribute("data-loc");
+    navSmallSelectEl.setAttribute("data-loc", "close-nav-tiny");
+    console.log("SET CLOSE")
+  } else {
+    // navSmallSelectEl.removeAttribute("data-loc");
+    navSmallSelectEl.setAttribute("data-loc", "nav-tiny");
+    console.log("SET OPEN");
+  }
 };
-if (link.dataset.loc === "close-nav-tiny"){
-    console.log("close")
+
+const linksForBig = () => {
+    linkEls.forEach((link) => {
+        link.addEventListener("click", (e) => {
+          e.preventDefault();
+  activeLink = link.dataset.loc;
+  mainEl.innerHTML = mainBig();
+  if (activeLink === "nav-tiny") {
+    linkEls = document.querySelectorAll(".nav-link");
+    generateLinks();
+    activeLink = "";
+  }
+  console.log(linkEls);
+});
+    })};
+
+const linksForSmall = () => {
+    linkEls.forEach((link) => {
+        link.addEventListener("click", (e) => {
+          e.preventDefault();
+    console.log(link);
+    const loc = link.dataset.loc;
+    console.log(loc);
+    // if (loc !== loca){
+    //     console.log(loc);
+    //     console.log(loca);
+    //     return;
+    // }
+  if (
+    loc !== "close-nav-tiny" &&
+    loc !== "nav-tiny"
+  ) {
+    console.log("reg");
+    activeLink = link.dataset.loc;
     mainEl.innerHTML = mainBig();
     toggleTinyNavSelector();
-} if (link.dataset.loc === "nav-tiny"){
-    console.log("nav")
-    mainEl.innerHTML = navTiny()
+  }
+  if (loc === "close-nav-tiny") {
+    console.log("close");
+    mainEl.innerHTML = mainBig();
+    toggleTinyNavSelector();
+  }
+  if (loc === "nav-tiny") {
+    console.log("nav");
+    mainEl.innerHTML = navTiny();
     toggleTinyNavSelector();
     linkEls = document.querySelectorAll(".nav-link");
     generateLinks();
-};
+  }
+});
+});
 };
 
 const generateLinks = () => {
-    const winWidth = window.innerWidth;
-    linkEls.forEach((link) => {
-      link.addEventListener("click",  (e) => {
-        e.preventDefault();
-  if (winWidth <= 790) {
-        linksForSmall(link);
-    } else {
-        linksForBig(link);
+  const winWidth = window.innerWidth;
+      if (winWidth <= 790) {
+          console.log("SMALL!!!!")
+        linksForSmall();
+      } else {
+          console.log("BIG!!")
+        linksForBig();
+      }
     }
-      });
-    });
-  };
 
 //   linkEls.forEach((link) => {
 //       link.addEventListener("click", (e) => {
 //     e.preventDefault();
-    
+
 // })
 //   });
-
 
 // const sizeChecker = () => {
 //   const winWidth = window.innerWidth;
@@ -130,17 +149,17 @@ const generateLinks = () => {
 //   }
 // };
 
-
-
 window.onload = () => {
-    mainEl.innerHTML = mainBig();
-    generateLinks();
+  mainEl.innerHTML = mainBig();
+  generateLinks();
 };
 
 window.onresize = () => {
-    const winWidth = window.innerWidth
-    if (winWidth === 789 || winWidth === 791) {
-        mainEl.innerHTML = mainBig();
-        generateLinks()
-    }
+  const initDiff = initWidth - 790;
+  const winWidth = window.innerWidth;
+  const currentDiff = winWidth - 790;
+  if (initDiff*currentDiff < 0) {
+    initWidth = window.innerWidth;
+    generateLinks();
+  }
 };
