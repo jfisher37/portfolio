@@ -38,6 +38,7 @@ body {
 #joey-s{
     font-weight: 900;
     font-size: 1.3em;
+    margin-left: .265em;
     min-width: 182px;
 }
 #nav-list-s {
@@ -77,8 +78,13 @@ body {
   transform: rotate(0deg);
 }
 
-.nav-link-s{
+.nav-link{
     font-weight: 600;
+    margin-right: .75em;
+   
+}
+
+.nav-link-s{
     line-height: 2em;
     min-width: 140px;
    
@@ -96,12 +102,6 @@ a {
     color: black;
 }
 
-.nav-link{
-    font-weight: 600;
-    margin-right: .75em;
-   
-   
-}
 
 .active{
     text-decoration: underline var(--main);
