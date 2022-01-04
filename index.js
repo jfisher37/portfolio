@@ -61,40 +61,47 @@ const toggleTinyNavSelector = () => {
     }
 }
 
+const linksForBig = (link) => {
+    activeLink = link.dataset.loc;
+    mainEl.innerHTML = mainBig();
+    if (activeLink === "nav-tiny"){
+        linkEls = document.querySelectorAll(".nav-link");
+        generateLinks();
+        activeLink = ""
+    }
+    console.log(linkEls);
+}
+
+const linksForSmall = (link) => {
+    if (link.dataset.loc !== "close-nav-tiny" && link.dataset.loc !== "nav-tiny"){
+        console.log("reg")
+    activeLink = link.dataset.loc;
+    mainEl.innerHTML = mainBig();
+    toggleTinyNavSelector();
+};
+if (link.dataset.loc === "close-nav-tiny"){
+    console.log("close")
+    mainEl.innerHTML = mainBig();
+    toggleTinyNavSelector();
+} if (link.dataset.loc === "nav-tiny"){
+    console.log("nav")
+    mainEl.innerHTML = navTiny()
+    toggleTinyNavSelector();
+    linkEls = document.querySelectorAll(".nav-link");
+    generateLinks();
+};
+};
+
 const generateLinks = () => {
+    const winWidth = window.innerWidth;
     linkEls.forEach((link) => {
       link.addEventListener("click",  (e) => {
         e.preventDefault();
-        // console.log(activeLink);
-        // console.log(prevLink);
-        if (link.dataset.loc !== "close-nav-tiny" && link.dataset.loc !== "nav-tiny"){
-            console.log("reg")
-        activeLink = link.dataset.loc;
-        mainEl.innerHTML = mainBig();
-        toggleTinyNavSelector();
-    };
-    if (link.dataset.loc === "close-nav-tiny"){
-        console.log("close")
-        mainEl.innerHTML = mainBig();
-        toggleTinyNavSelector();
-    } if (link.dataset.loc === "nav-tiny"){
-        console.log("nav")
-        mainEl.innerHTML = navTiny()
-        toggleTinyNavSelector();
-        linkEls = document.querySelectorAll(".nav-link");
-        generateLinks();
+  if (winWidth <= 790) {
+        linksForSmall(link);
+    } else {
+        linksForBig(link);
     }
-        // console.log(activeLink);
-        // console.log(prevLink);
-        
-        // mainEl.innerHTML = await mainBig();
-        // if (activeLink === "nav-tiny"){
-        //     linkEls = document.querySelectorAll(".nav-link");
-        //     generateLinks();
-        //     console.log(activeLink);
-        //     activeLink = prevLink;
-        //     console.log(activeLink);
-        // }
       });
     });
   };
@@ -130,6 +137,10 @@ window.onload = () => {
     generateLinks();
 };
 
-// window.onresize = () => {
-//   sizeChecker();
-// };
+window.onresize = () => {
+    const winWidth = window.innerWidth
+    if (winWidth === 789 || winWidth === 791) {
+        mainEl.innerHTML = mainBig();
+        generateLinks()
+    }
+};
