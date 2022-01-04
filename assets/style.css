@@ -54,30 +54,34 @@ body {
     margin-top: 15px;
     max-height: 35px;
     max-width: 35px;
-    /* transform: rotate(180deg);
-    transition: transform 1s; */
     display: none;
     
 }
 
-/* #nav-selector-s:focus {
-   height: 100vh;
-   width: 100vh;
-} */
-
-/* #nav-selector-s:focus #nav-list-s {
-    display: initial;
-    margin-top: 20vh;
-}
-
-#nav-selector-s:focus #menu-select-s {
-  transform: rotate(0deg);
-} */
-
 .nav-link{
+    position: relative;
     font-weight: 600;
     margin-right: .75em;
    
+}
+.nav-link:after {
+    content: '';
+    position: absolute;
+    top: 37.5px;
+    left: 0;
+    width: 100%;
+    height: 0.1em;
+    background-color: var(--main);
+    opacity: 0;
+    transition: opacity 300ms, transform 300ms;
+    opacity: 1;
+    transform: scale(0);
+    transform-origin: center;
+  }
+  
+.nav-link:hover::after,
+.nav-link:focus::after{
+transform: scale(1); 
 }
 
 .nav-link-s{
