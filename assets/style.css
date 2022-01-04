@@ -1,0 +1,119 @@
+:root {
+    --main: #f8de4b;
+    --background: #f9f8ff;
+    color: black;
+    font-size: 30px;
+  }
+
+body {
+   font-family: 'Darker Grotesque', sans-serif;
+  
+}
+
+#nav-contain {
+    display: flex;
+    justify-content: left;
+    margin-left: 10px;
+    
+}
+
+#joey {
+    font-weight: 900;
+    font-size: 1.3em;
+    margin-right: 1em;
+}
+
+#nav-list {
+    display: flex;
+    justify-content: left;
+    align-items:flex-end
+}
+
+#nav-contain-s {
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+#joey-s{
+    font-weight: 900;
+    font-size: 1.3em;
+    min-width: 182px;
+}
+#nav-list-s {
+    margin-right: 45%;
+    margin-top: 0vh;
+    transition: margin-top 2s ease-in;
+    display: none;
+}
+
+#nav-selector-s {
+    display: flex;
+    justify-content: flex-end;
+}
+
+#menu-select-s{
+    font-size: 2em;
+    margin-right: 25px;
+    margin-top: 15px;
+    max-height: 35px;
+    max-width: 35px;
+    transform: rotate(180deg);
+    transition: transform 1s;
+    
+}
+
+#nav-selector-s:focus {
+   height: 100vh;
+   width: 100vh;
+}
+
+#nav-selector-s:focus #nav-list-s {
+    display: initial;
+    margin-top: 20vh;
+}
+
+#nav-selector-s:focus #menu-select-s {
+  transform: rotate(0deg);
+}
+
+.nav-link-s{
+    font-weight: 600;
+    line-height: 2em;
+    min-width: 140px;
+   
+}
+
+.active-s{
+    text-decoration: none;
+}
+
+.inactive-s{
+    text-decoration: none;
+}
+
+a {
+    color: black;
+}
+
+.nav-link{
+    font-weight: 600;
+    margin-right: .75em;
+   
+   
+}
+
+.active{
+    text-decoration: underline var(--main);
+    text-underline-offset: 10px;
+}
+
+.inactive{
+    text-decoration: none;
+}
+
+@media only screen and (max-width: 790px) {
+    /* #nav-list{
+        display: none;
+    } */
+}

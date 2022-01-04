@@ -19,16 +19,27 @@
 
     <title>Joey Fisher's Portfolio</title>
   </head>
-  <body>
-      <nav>
-        <div id="nav-contain">
-            <p1 id="joey">Joey Fisher</p1>
-            <ul id="nav-list">
-                <li class="nav-link">About Me</li>
-                <li class="nav-link">My Work</li>
-                <li class="nav-link">Contact Me</li>
-                <li class="nav-link">Resume</li>
+  <body id="body">
+      <nav id="nav">
+        <div id="nav-contain-s">
+            <p1 id="joey-s">Joey Fisher</p1>
+            <div id="nav-selector-s" tabindex="0">
+            <ul id="nav-list-s">
+                <li class="nav-link-s"><a class="active-s" href="#">
+                    About Me
+                </a></li>
+                <li class="nav-link-s"><a class="inactive-s" href="#">
+                    My Work
+                </a></li>
+                <li class="nav-link-s"><a class="inactive-s" href="#">
+                    Contact Me
+                </a></li>
+                <li class="nav-link-s"><a class="inactive-s" href="#">
+                    Resume
+                </a></li>
             </ul>
+            <span id="menu-select-s">^</span>
+        </div>
         </div>
       </nav>
       <main>
@@ -38,5 +49,5 @@
 
       </footer>
   </body>
-  <script src="index.js"></script>
+  <!-- <script src="index.js" type="module"></script> -->
 </html>
