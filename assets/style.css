@@ -204,8 +204,58 @@ p2 {
 
 /* work page */
 
+#work-page {
+    width: 100%;
+}
+
+
 #grid-contain {
-    
+    display: grid;
+    justify-content: center;
+    grid-template-columns: [first] 35% [second] 35% [third];
+    grid-template-rows: [first] 40% [second] 40%;
+}
+
+#grid-contain article {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.col-1-item {
+    grid-column-start: first;
+    grid-column-end: second;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+
+.col-2-item {
+    grid-column-start: second;
+    grid-column-end: third;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+.work-img {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+}
+
+.work-title {
+    position: absolute;
+    z-index: 2;
+}
+
+.role-stack {
+    position: absolute;
+    z-index: 2;
 }
 
 
