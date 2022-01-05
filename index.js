@@ -87,11 +87,15 @@ window.onload = () => {
 };
 
 window.onresize = () => {
+  const navTinyEl = document.getElementById("nav-tiny");
   const initDiff = initWidth - 790;
   const winWidth = window.innerWidth;
   const currentDiff = winWidth - 790;
   if (initDiff * currentDiff < 0) {
     initWidth = window.innerWidth;
     generateLinks();
+    if (winWidth > 790 && navTinyEl){
+        mainEl.innerHTML = mainBig();
+    }
   }
 };
