@@ -48,6 +48,9 @@ menuIconEl.addEventListener("click", (e) => {
 
 const linksForBig = () => {
   linkEls.forEach((link) => {
+    if (activeLink === link.dataset.loc){
+        link.setAttribute("class", "nav-link active");
+    } else {link.setAttribute("class", "nav-link inactive")};
     link.addEventListener("click", (e) => {
       e.preventDefault();
       activeLink = link.dataset.loc;
