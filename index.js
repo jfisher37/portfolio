@@ -9,8 +9,7 @@ import navTiny from "./pages/navTiny.js";
 const navEl = document.getElementById("nav");
 const mainEl = document.getElementById("main");
 let linkEls = document.querySelectorAll(".nav-link");
-let navSmallSelectEl = document.getElementById("menu-select-s");
-
+let navSmallSelectBtn = document.getElementById("menu-select-s");
 
 let activeLink = "about";
 let initWidth = window.innerWidth;
@@ -34,7 +33,7 @@ const linksForBig = () => {
       e.preventDefault();
       activeLink = link.dataset.loc;
       linkEls.forEach((link) => {
-          link.setAttribute("class", "nav-link inactive")
+        link.setAttribute("class", "nav-link inactive");
       });
       link.setAttribute("class", "nav-link active");
       mainEl.innerHTML = mainBig();
@@ -43,48 +42,31 @@ const linksForBig = () => {
 };
 
 const toggleTinyNavSelector = () => {
-    const navTinyEl = document.getElementById("nav-tiny");
-    console.log("HERE!")
-  if (navSmallSelectEl.dataset.loc === "nav-tiny" && navTinyEl) {
-    navSmallSelectEl.setAttribute("data-loc", "close-nav-tiny");
-    console.log("SET CLOSE");
-  } else if (navSmallSelectEl.dataset.loc === "close-nav-tiny" && !navTinyEl){
-    navSmallSelectEl.setAttribute("data-loc", "nav-tiny");
-    console.log("SET OPEN");
-  } else {console.log("WHAT IS HAPPENING?")}
-//   else {
-//       console.log("NOW WHAT");
-//     const navTinyEl = document.getElementById("nav-tiny");
-//     if (navTinyEl) {
-//         navSmallSelectEl.setAttribute("data-loc", "close-nav-tiny");
-//     } else {
-//         navSmallSelectEl.setAttribute("data-loc", "nav-tiny");
-//     }
-//   }
+  if (navSmallSelectBtn.dataset.selector === "nav-tiny") {
+    navSmallSelectBtn.setAttribute("data-selector", "close-nav-tiny");
+  } else if (navSmallSelectBtn.dataset.selector === "close-nav-tiny") {
+    navSmallSelectBtn.setAttribute("data-selector", "nav-tiny");
+  }
 };
 
+navSmallSelectBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+  if (navSmallSelectBtn.dataset.selector === "nav-tiny") {
+    mainEl.innerHTML = navTiny();
+    linkEls = document.querySelectorAll(".nav-link");
+    linksForSmall();
+  } else {
+    mainEl.innerHTML = mainBig();
+  }
+  toggleTinyNavSelector();
+});
 
 const linksForSmall = () => {
   linkEls.forEach((link) => {
-    link.addEventListener("click",  (e) => {
+    link.addEventListener("click", (e) => {
       e.preventDefault();
-       console.log(link);
-      console.log(link.dataset.loc);
-      const loc = link.dataset.loc;
-    //   navSmallSelectEl.removeAttribute("data-loc");
-      console.log(loc);
-      if (loc !== "close-nav-tiny" && loc !== "nav-tiny") {
         activeLink = link.dataset.loc;
         mainEl.innerHTML = mainBig();
-      }
-      if (loc === "close-nav-tiny") {
-        mainEl.innerHTML = mainBig();
-      }
-      if (loc === "nav-tiny") {
-        mainEl.innerHTML = navTiny();
-        linkEls = document.querySelectorAll(".nav-link");
-        linksForSmall();
-    }
       toggleTinyNavSelector();
     });
   });

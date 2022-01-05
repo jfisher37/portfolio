@@ -7,6 +7,7 @@
 
 body {
    font-family: 'Darker Grotesque', sans-serif;
+   background-color: var(--background);
   
 }
 
@@ -54,6 +55,8 @@ body {
     margin-top: 15px;
     max-height: 35px;
     max-width: 35px;
+    border: none;
+    background-color: var(--background);
     display: none;
     
 }
@@ -73,7 +76,7 @@ body {
     height: 0.1em;
     background-color: var(--main);
     opacity: 0;
-    transition: opacity 300ms, transform 300ms;
+    transition: opacity 600ms, transform 600ms;
     opacity: 1;
     transform: scale(0);
     transform-origin: center;
