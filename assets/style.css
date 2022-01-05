@@ -141,12 +141,47 @@ a {
     text-decoration: none;
 }
 
+main {
+    margin-top: 75px;
+    display: flex;
+    justify-content: center;
+}
+
+#about-page {
+    width: 75%;
+}
+
+
+p2 {
+    font-size: 2em;
+    text-align: right;
+    padding-right: 15px;
+    font-weight: 700;
+}
+
+#about-section {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 20px;
+}
+
+#about-text {
+    border-left: solid var(--main) 3px;
+    padding-left: 25px;
+}
+
 #nav-tiny {
-    margin-top: 25px;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
+
+#joey-photo {
+    height: 250px;
+    width: 250px;
+}
+
+
 
 @media only screen and (max-width: 790px) {
     #nav-list{
