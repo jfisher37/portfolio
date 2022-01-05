@@ -105,6 +105,8 @@ window.onresize = () => {
     generateLinks();
     if (winWidth > 790 && navTinyEl){
         mainEl.innerHTML = mainBig();
+        navSmallSelectBtn.setAttribute("data-selector", "nav-tiny");
+        menuIconEl.removeAttribute("class");
     }
   }
 };
