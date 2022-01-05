@@ -11,6 +11,8 @@ body {
   
 }
 
+/* large nav styles */
+
 #nav-contain {
     display: flex;
     justify-content: left;
@@ -30,6 +32,7 @@ body {
     align-items:flex-end
 }
 
+/* small nav styles */
 
 #joey-s{
     font-weight: 900;
@@ -37,11 +40,19 @@ body {
     margin-left: .265em;
     min-width: 182px;
 }
+
+
 #nav-list-s {
     margin-right: 45%;
     margin-top: 0vh;
     transition: margin-top 2s ease-in;
     display: none;
+}
+
+#nav-tiny {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 #nav-selector-s {
@@ -60,6 +71,8 @@ body {
     display: none;
     
 }
+
+/* menu icon of small nav */
 
 #icon-container {
     display: inline-block;
@@ -86,6 +99,8 @@ body {
     transform: rotate(45deg) translate(-8px, -8px);
   }
 
+ /* basic styles of nav items  */
+
 .nav-link{
     position: relative;
     font-weight: 600;
@@ -93,6 +108,9 @@ body {
     cursor: pointer;
    
 }
+
+/* orange underline of nav items */
+
 .nav-link:after {
     content: '';
     position: absolute;
@@ -113,24 +131,21 @@ body {
 transform: scale(1); 
 }
 
+/* nav items in small version (defunct?) */
+
 .nav-link-s{
     line-height: 2em;
     min-width: 140px;
    
 }
 
-.active-s{
-    text-decoration: none;
-}
-
-.inactive-s{
-    text-decoration: none;
-}
+/* Really just the resume nav item */
 
 a {
     color: black;
 }
 
+/* active and inactive nav items */
 
 .active{
     text-decoration: underline var(--main);
@@ -141,22 +156,33 @@ a {
     text-decoration: none;
 }
 
+.active-s{
+    text-decoration: none;
+}
+
+.inactive-s{
+    text-decoration: none;
+}
+
+/* Things in main section  */
+
 main {
     margin-top: 75px;
     display: flex;
     justify-content: center;
 }
 
-#about-page {
-    width: 75%;
-}
-
-
 p2 {
     font-size: 2em;
     text-align: right;
     padding-right: 15px;
     font-weight: 700;
+}
+
+/* about page  */
+
+#about-page {
+    width: 75%;
 }
 
 #about-section {
@@ -170,18 +196,20 @@ p2 {
     padding-left: 25px;
 }
 
-#nav-tiny {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
 
 #joey-photo {
     height: 250px;
     width: 250px;
 }
 
+/* work page */
 
+#grid-contain {
+    
+}
+
+
+/* smaller-screen-specific styles */
 
 @media only screen and (max-width: 790px) {
     #nav-list{
