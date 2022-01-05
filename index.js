@@ -9,7 +9,8 @@ import navTiny from "./pages/navTiny.js";
 const navEl = document.getElementById("nav");
 const mainEl = document.getElementById("main");
 let linkEls = document.querySelectorAll(".nav-link");
-let navSmallSelectBtn = document.getElementById("menu-select-s");
+const navSmallSelectBtn = document.getElementById("menu-select-s");
+const menuIconEl = document.getElementById("icon-container");
 
 let activeLink = "about";
 let initWidth = window.innerWidth;
@@ -26,6 +27,13 @@ const mainBig = () => {
       break;
   }
 };
+menuIconEl.addEventListener("click", (e) => {
+    e.preventDefault();
+    changeIcon(menuIconEl);
+})
+const changeIcon = (btn) => {
+    btn.classList.toggle("change");
+  }
 
 const linksForBig = () => {
   linkEls.forEach((link) => {
@@ -68,6 +76,7 @@ const linksForSmall = () => {
         activeLink = link.dataset.loc;
         mainEl.innerHTML = mainBig();
       toggleTinyNavSelector();
+      changeIcon(menuIconEl);
     });
   });
 };
