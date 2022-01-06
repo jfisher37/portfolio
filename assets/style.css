@@ -199,18 +199,23 @@ p2 {
 #about-section {
     display: flex;
     justify-content: flex-start;
+    opacity: 0;
     margin-top: 20px;
+    animation: 1.2s ease .4s normal forwards 1 fade-in;
 }
 
 #about-text {
     border-left: solid var(--main) 3px;
     padding-left: 25px;
+    opacity: 0;
+    animation: 1.2s ease .4s normal forwards 1 fade-in;
 }
 
 
 #joey-photo {
     height: 250px;
     width: 250px;
+    animation: 1.2s ease 0s normal forwards 1 fade-in;
 }
 
 /* work page */
