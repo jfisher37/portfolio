@@ -288,39 +288,70 @@ p2 {
     position: relative;
     z-index: 1;
     /* padding: 1px; */
-    filter: blur(3px);
+    filter: blur(3px) grayscale(0%);
     transition: filter 1s ease;
 }
 
 #grid-contain a:hover > .work-img,
 #grid-contain a:focus > .work-img {
-    filter: blur(0px);
+    filter: blur(0px) grayscale(100%);
 }
 
 .work-title {
     position: absolute;
     /* max-height: 100%; */
-    z-index: 2;
+    z-index: 3;
     font-weight: 800;
-    font-size: 2em;
+    font-size: 1.5em;
+    color: black;
+    padding-bottom: 10px;
+    /* padding-left: 5px;
+    padding-right: 5px; */
+    width: 235px;
+    text-align: center;
+    background-color: var(--main);
     top: auto;
     transform: translateY(0);
-    transition: transform 1s ease;
+    transition: transform 1s ease, color 1s ease, background-color 1s ease;
+    /* background-color: #f8de4b6c; */
+}
+/* If title is too long */
+.big-title {
+    font-size: 1em;
+    padding-top: 12.5px;
+    padding-bottom: 12.5px;
+
 }
 
 #grid-contain a:hover > .work-title,
 #grid-contain a:focus > .work-title {
     transform:translateY(-80%);
+    color: var(--main);
+    background-color: black;
+    
 }
 
 .role-stack {
-    margin-top: 5%;
+    margin-top: 50px;
+    padding-top: 25px;
+    padding-bottom: 5%;
+    padding-left: 3%;
+    padding-right: 3%;
+    width: 235px;
     position: absolute;
+    color: var(black);
     z-index: 0;
     opacity: 0;
-    transition: opacity 1s ease 1s;
+    font-size: .7em;
+    background-color: var(--main);
+    transition: opacity 1s ease 1.2s;
     display: flex;
     justify-content: flex-start;
+}
+
+/* for role-stack ul with too much text */
+.big-role-stack {
+    font-size: .6em;
 }
 
 #grid-contain a:hover > .role-stack,
@@ -335,7 +366,28 @@ p2 {
 }
 
 .stack {
+    margin-top: 3%;
     text-align: left;
+}
+
+.in-development {
+    margin-bottom: 5%; 
+    text-align: center;
+    font-weight: 700;
+}
+
+/* footer */
+
+footer {
+    margin-top: 75px;
+    margin-right: 10px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.footer-icon {
+    height: 50px;
+    width: 50px;
 }
 /* smaller-screen-specific styles */
 
