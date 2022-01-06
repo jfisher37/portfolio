@@ -216,7 +216,7 @@ p2 {
     grid-template-rows: [first] 40% [second] 40%;
 }
 
-#grid-contain article {
+#grid-contain a {
     position: relative;
     height: 100%;
     width: 100%;
@@ -227,8 +227,8 @@ p2 {
     
 }
 
-/* #grid-contain article:hover,
-#grid-contain article:focus{
+/* #grid-contain a:hover,
+#grid-contain a:focus{
     align-items: flex-start;
 } */
 
@@ -251,11 +251,24 @@ p2 {
     width: 100%;
 }
 
+.work-link {
+    height: 100%;
+    width: 100%;
+}
+
 .work-img {
     height: 100%;
     width: 100%;
     position: relative;
     z-index: 1;
+    /* padding: 1px; */
+    filter: blur(3px);
+    transition: filter 1s ease;
+}
+
+#grid-contain a:hover > .work-img,
+#grid-contain a:focus > .work-img {
+    filter: blur(0px);
 }
 
 .work-title {
@@ -269,8 +282,8 @@ p2 {
     transition: transform 1s ease;
 }
 
-#grid-contain article:hover > .work-title,
-#grid-contain article:focus > .work-title {
+#grid-contain a:hover > .work-title,
+#grid-contain a:focus > .work-title {
     transform:translateY(-80%);
 }
 
@@ -279,16 +292,25 @@ p2 {
     position: absolute;
     z-index: 0;
     opacity: 0;
-    transition: opacity 1s ease 1.2s;
+    transition: opacity 1s ease 1s;
+    display: flex;
+    justify-content: flex-start;
 }
 
-#grid-contain article:hover > .role-stack,
-#grid-contain article:focus > .role-stack {
+#grid-contain a:hover > .role-stack,
+#grid-contain a:focus > .role-stack {
     display: inline-block;
     z-index: 2;
     opacity: 1;
 }
 
+.role {
+    text-align: left;
+}
+
+.stack {
+    text-align: left;
+}
 /* smaller-screen-specific styles */
 
 @media only screen and (max-width: 790px) {
