@@ -28,7 +28,7 @@ const mainBig = () => {
         footerEl.setAttribute("class", "work-footer");
       return work();
     case "contact":
-        footerEl.setAttribute("class", "footer");
+        footerEl.setAttribute("class", "footer-contact");
       return contact();
     default:
       break;

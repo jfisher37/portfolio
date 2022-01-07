@@ -6,7 +6,7 @@ const contact = () => {
     </p2>
     <form id="contact-form">
         <section id="name-email">
-        <label for="name">
+        <label for="name" id="name-label">
             Name:
         </label>
         <input name="name" type="text" placeholder="Name" id="name-input" required>
@@ -16,7 +16,7 @@ const contact = () => {
         <input name="email" type="text" placeholder="Email" id="email-input" required>
     </section>
     <section id="message-contain">
-        <label for="message">
+        <label for="message" id="message-label">
             Message:
         </label>
         <textarea name="message" id="message-input" placeholder="Your message here" required></textarea>

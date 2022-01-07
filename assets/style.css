@@ -524,6 +524,61 @@ footer {
 
 /* small-mid-size screens */
 
+@media only screen and (max-width: 983px) {
+    
+    /* contact page once it starts to get tight */
+
+    #contact-form {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+    
+    #name-email {
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    #email-label {
+        margin-bottom: 20px;
+    }
+
+    #name-label {
+        margin-bottom: 20px;
+    }
+
+    #message-contain label {
+        margin-bottom: 20px;
+    }
+    
+    #message-contain {
+        flex-direction: column;
+        width: 100%;
+        margin-left: 0;
+        margin-bottom: 20px;
+        margin-top: 10%;
+    }
+    
+    #button-contain {
+        margin-top: 10%;
+        align-items: center;
+        justify-content: center;
+        
+    }
+
+    .footer-contact {
+        margin-top: 100px;
+        position: relative;
+    }
+
+    .footer-about {
+        margin-top: 100px;
+        position: relative;
+    }
+    
+}
+
 @media only screen and (max-width: 900px) {
 
     /* work page made into single column */
@@ -586,6 +641,8 @@ footer {
         grid-row-end: ninth;
         animation: 1.2s ease 3.2s normal forwards 1 fade-in;
     }
+
+    /* centers about picture when screen is small enough */
 
     #about-page {
         width: 100%;
@@ -673,6 +730,25 @@ footer {
     #about-label {
         border-bottom: solid var(--main) 3px;
         padding-bottom: 10px;
+    }
+
+    /* contact page small screen */
+
+    #contact-page {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #contact-form {
+        padding-left: 0;
+        border-left: none;
+    }
+    
+    #contact-label {
+        width: auto;
+        border-bottom: solid var(--main) 3px;
+        padding-bottom: 10px;
+        margin-bottom: 30px;
     }
 
 }
