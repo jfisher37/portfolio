@@ -311,13 +311,27 @@ p2 {
     filter: blur(0px) grayscale(100%);
 }
 
+/* @keyframes img-normal {
+    from {
+        filter: blur(0px) grayscale(100%);
+    }
+    to {
+        filter: blur(3px) grayscale(0%);
+    }
+} */
+
+/* #grid-contain a:active > .work-img {
+    animation: 10s ease 0s normal forwards infinite img-normal;
+} */
+
 .work-title {
     position: absolute;
     z-index: 3;
     font-weight: 800;
-    font-size: 1.5em;
+    font-size: 1em;
     color: black;
-    padding-bottom: 10px;
+    padding-top: 12.5px;
+    padding-bottom: 12.5px;
     width: 235px;
     text-align: center;
     background-color: var(--main);
@@ -326,12 +340,12 @@ p2 {
     transition: transform 1s ease, color 1s ease, background-color 1s ease;
 }
 /* If title is too long */
-.big-title {
+/* .big-title {
     font-size: 1em;
     padding-top: 12.5px;
     padding-bottom: 12.5px;
 
-}
+} */
 
 #grid-contain a:hover > .work-title,
 #grid-contain a:focus > .work-title {
@@ -352,7 +366,7 @@ p2 {
     color: var(black);
     z-index: 0;
     opacity: 0;
-    font-size: .7em;
+    font-size: .6em;
     background-color: var(--main);
     transition: opacity 1s ease 1.2s;
     display: flex;
@@ -360,13 +374,27 @@ p2 {
 }
 
 /* for role-stack ul with too much text */
-.big-role-stack {
+/* .big-role-stack {
     font-size: .6em;
-}
+} */
+
+/* #grid-contain a:hover > .role-stack,
+#grid-contain a:focus > .role-stack {
+    display: inline-block;
+    z-index: 2;
+    opacity: 1;
+} */
 
 #grid-contain a:hover > .role-stack,
 #grid-contain a:focus > .role-stack {
     display: inline-block;
+    z-index: 2;
+    opacity: 1;
+}
+
+#grid-contain a:hover > .role-stack-click,
+#grid-contain a:focus > .role-stack-click {
+    display: none;
     z-index: 2;
     opacity: 1;
 }
