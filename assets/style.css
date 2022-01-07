@@ -413,6 +413,8 @@ p2 {
     align-items: center;
     width: 283px;
     flex-wrap: wrap;
+    opacity: 0;
+    animation: 1.2s ease .4s normal forwards 1 fade-in;
 }
 
 #email-label {
@@ -424,18 +426,50 @@ p2 {
     justify-content: flex-start;
     align-items: center;
     width: 330px;
+    height: 100%;
     flex-wrap: wrap;
     margin-left: 15%;
+    margin-bottom: 20px;
+    animation: 1.2s ease 1.1s normal forwards 1 fade-in;
+    opacity: 0;
+}
+
+#message-contain label {
+    margin-bottom: 10px;
 }
 
 #message-input{
     width: 330px;
     max-height: 330px;
+    min-height: 165px;
     bottom: 0;
+    font-size: .75em;
+}
+
+#button-contain {
+    display: flex;
+    width: 100%;
+    opacity: 0;
+    /* bottom: 0; */
+    /* margin-bottom: -8px; */
+    align-items: flex-end;
+    justify-content: flex-end;
+    animation: 1.2s ease 1.8s normal forwards 1 fade-in;
 }
 
 #contact-button {
-
+   height: 30px;
+   width: 150px;
+   padding-bottom: 5px;
+   padding-top: -150px;
+   text-align: center;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   font-size: .9em;
+   color: var(--background);
+   background-color: black;
+   border: none;
 }
 
 
@@ -443,9 +477,9 @@ p2 {
 
 footer {
     margin-top: 75px;
-    margin-right: 10px;
+    /* margin-right: 20%; */
     bottom: 0;
-    width: 100%;
+    width: 98%;
     display: flex;
     justify-content: flex-end;
     position: absolute;
