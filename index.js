@@ -51,8 +51,7 @@ const nameInputEl = document.getElementById ("name-input");
 const emailInputEl = document.getElementById("email-input");
 const messageInputEl = document.getElementById("message-input");
 const formBtn = document.getElementById("contact-button");
-    console.log(formEl);
-    console.log(mainEl);
+
 formEl.addEventListener("submit", (e) => {
         e.preventDefault();
         contactFormHandler(nameInputEl.value, emailInputEl.value, messageInputEl.value);
@@ -107,7 +106,6 @@ menuIconEl.addEventListener("click", (e) => {
 // creates links on for bigger screen sizes.
 
 const linksForBig = () => {
-    console.log(linkEls)
   linkEls.forEach((link) => {
     if (activeLink === link.dataset.loc){
         link.setAttribute("class", "nav-link active");
@@ -163,6 +161,7 @@ const linksForSmall = () => {
         activeLink = link.dataset.loc;
         mainEl.innerHTML = mainBig();
       toggleTinyNavSelector();
+      console.log("Shouldn't be here...")
       changeIcon(menuIconEl);
     });
   });
