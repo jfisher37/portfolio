@@ -2,6 +2,8 @@ import about from "./pages/about.js";
 import work from "./pages/work.js";
 import contact from "./pages/contact.js";
 import navTiny from "./pages/navTiny.js";
+import isMobile from "./utils/isMobile.js";
+import workMobile from "./pages/workMobile.js";
 
 const mainEl = document.getElementById("main");
 let linkEls = document.querySelectorAll(".nav-link");
@@ -21,7 +23,11 @@ const mainBig = () => {
       return about();
     case "work":
       footerEl.setAttribute("class", "work-footer");
-      return work();
+      if (!isMobile()) {
+        return work();
+      } else {
+        return workMobile();
+      }
     case "contact":
       footerEl.setAttribute("class", "footer-contact");
       return contact();
@@ -153,6 +159,45 @@ navSmallSelectBtn.addEventListener("click", (e) => {
   toggleTinyNavSelector();
 });
 
+
+// set dataset.linkable for new aTags
+
+const makeDataLinkable = (els) => {
+    els.forEach ((tag) => {
+        if(!tag.dataset.linkable || tag.dataset.linkable === "false"){
+        tag.setAttribute("data-linkable", "false");
+    }
+        if(tag.dataset.linkable === "true") {
+            tag.setAttribute("data-linkable", "true");
+        }
+    })
+}
+
+// creates first click for panel second click for link functionality on mobile
+
+const generateWorkMobileHrefs = () => {
+    const workPageMobileEl = document.getElementById("work-page-mobile");
+    let aTagEls = workPageMobileEl.querySelectorAll("a");
+
+    makeDataLinkable(aTagEls);
+
+    aTagEls.forEach((tag) => {
+        tag.addEventListener("click", (e) => {
+            for (let i = 0; i < aTagEls.length; i++){
+                if(aTagEls[i] !== tag){
+                aTagEls[i].setAttribute("data-linkable", false)}
+            }
+            if (tag.dataset.linkable === "false"){
+                e.preventDefault();
+                tag.dataset.linkable = "true" 
+                aTagEls = workPageMobileEl.querySelectorAll("a");
+                makeDataLinkable(aTagEls);
+            }
+        })
+    })
+
+};
+
 // creates links for small screen nav items
 
 const linksForSmall = () => {
@@ -163,7 +208,10 @@ const linksForSmall = () => {
       mainEl.innerHTML = mainBig();
       if (link.dataset.loc === "contact") {
         createForm();
-      };
+      }
+      if (link.dataset.loc === "work" && isMobile()) {
+        generateWorkMobileHrefs();
+      }
       toggleTinyNavSelector();
       changeIcon(menuIconEl);
     });

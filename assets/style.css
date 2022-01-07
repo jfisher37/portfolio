@@ -227,7 +227,7 @@ p2 {
 
 /* work page */
 
-#work-page {
+#work-page, #work-page-mobile {
     width: 100%;
     height: 100%;
     display: flex;
@@ -235,6 +235,7 @@ p2 {
     margin-top: 20px;
     animation: 1.2s ease 0s normal forwards 1 fade-in;
 }
+
 
 
 #grid-contain {
@@ -356,7 +357,7 @@ p2 {
     opacity: 0;
     font-size: .6em;
     background-color: var(--main);
-    transition: opacity 1s ease 1.2s;
+    transition: opacity 1s ease .7s;
     display: flex;
     justify-content: flex-start;
 }
@@ -689,7 +690,7 @@ footer {
 
     /* work title moved to top */
 
-    #work-page {
+    #work-page, #work-page-mobile {
         flex-direction: column;
         align-items: center;
     }
