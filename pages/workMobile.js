@@ -10,7 +10,7 @@ const workMobile = () => {
             <p3 class="work-title">
                 Prequel
             </p3>
-            <ul class="role-stack">
+            <ul class="role-stack-mobile">
                 <li class="role">
                     <b>Role:</b> Back End Lead, Front End Developer
                 </li>
@@ -24,7 +24,7 @@ const workMobile = () => {
             <p3 class="work-title">
                 New2Town
             </p3>
-            <ul class="role-stack big-role-stack">
+            <ul class="role-stack-mobile big-role-stack">
                 <li class="role">
                 <b>Role:</b> Database Management, Front End Logic
                 </li>
@@ -38,7 +38,7 @@ const workMobile = () => {
             <p3 class="work-title big-title">
                 Got You Cupboard
             </p3>
-            <ul class="role-stack big-role-stack">
+            <ul class="role-stack-mobile big-role-stack">
                 <li class="role">
                 <b>Role:</b> Project Lead, Front End Developer
                 </li>
@@ -52,7 +52,7 @@ const workMobile = () => {
             <p3 class="work-title big-title">
                 Fitness Tracker
             </p3>
-            <ul class="role-stack big-role-stack">
+            <ul class="role-stack-mobile big-role-stack">
                 <li class="role">
                 <b>Role:</b> Sole Developer
                 </li>
@@ -66,7 +66,7 @@ const workMobile = () => {
             <p3 class="work-title">
                 Tech Blog
             </p3>
-            <ul class="role-stack big-role-stack">
+            <ul class="role-stack-mobile big-role-stack">
                 <li class="role">
                 <b>Role:</b> Sole Developer
                 </li>
@@ -80,7 +80,7 @@ const workMobile = () => {
             <p3 class="work-title big-title">
                 Employee Tracker
             </p3>
-            <ul class="role-stack">
+            <ul class="role-stack-mobile">
                 <li class="role">
                 <b>Role:</b> Sole Developer
                 </li>
@@ -94,7 +94,7 @@ const workMobile = () => {
             <p3 class="work-title big-title">
                 Drinking Buddies
             </p3>
-            <ul class="role-stack">
+            <ul class="role-stack-mobile">
                 <li class="in-development">
                     (In Development)
                 </li>
@@ -111,7 +111,7 @@ const workMobile = () => {
             <p3 class="work-title">
                 This Website
             </p3>
-            <ul class="role-stack big-role-stack">
+            <ul class="role-stack-mobile big-role-stack">
                 <li class="in-development" style="margin-top: 3%;">
                     (Just in case you wanted to see its code)
                 </li>

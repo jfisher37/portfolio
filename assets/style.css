@@ -344,7 +344,7 @@ p2 {
     
 }
 
-.role-stack {
+.role-stack, .role-stack-mobile {
     margin-top: 50px;
     padding-top: 25px;
     padding-bottom: 5%;
@@ -362,19 +362,26 @@ p2 {
     justify-content: flex-start;
 }
 
+.role-stack-mobile {
+    margin-top: 20px;
+    padding-top: 50px;
+}
+
 #grid-contain a:hover > .role-stack,
-#grid-contain a:focus > .role-stack {
+#grid-contain a:focus > .role-stack,
+#grid-contain a:hover > .role-stack-mobile,
+#grid-contain a:focus > .role-stack-mobile {
     display: inline-block;
     z-index: 2;
     opacity: 1;
 }
 
-#grid-contain a:hover > .role-stack-click,
+/* #grid-contain a:hover > .role-stack-click,
 #grid-contain a:focus > .role-stack-click {
     display: none;
     z-index: 2;
     opacity: 1;
-}
+} */
 
 .role {
     text-align: left;
