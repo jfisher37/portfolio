@@ -21,7 +21,7 @@ const contact = () => {
         </label>
         <textarea name="message" id="message-input" placeholder="Your message here" required></textarea>
     <section id="button-contain">
-        <button id=contact-button><p>Submit</p></button>
+        <button id=contact-button type="submit" class="not-submitted"><p>Submit</p></button>
     </section>
     </section>
     </form>

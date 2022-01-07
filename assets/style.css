@@ -457,7 +457,7 @@ p2 {
     animation: 1.2s ease 1.8s normal forwards 1 fade-in;
 }
 
-#contact-button {
+/* #contact-button {
    height: 30px;
    width: 150px;
    padding-bottom: 5px;
@@ -470,6 +470,47 @@ p2 {
    color: var(--background);
    background-color: black;
    border: none;
+   box-shadow: 0px 2px 3px 1px rgba(0, 0, 0, 0.23);
+} */
+
+.not-submitted {
+    height: 30px;
+    width: 150px;
+    padding-bottom: 5px;
+    padding-top: -150px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: .9em;
+    color: var(--background);
+    background-color: black;
+    border: none;
+    box-shadow: 0px 3px 3px 1px rgba(0, 0, 0, 0.23);
+    border-radius: 3px;
+}
+
+.not-submitted:hover {
+    background-color: rgb(49, 48, 48);
+}
+.not-submitted:active {
+    box-shadow: inset 0px 0px 1px 1px var(--background);
+}
+
+.submitted {
+    height: 30px;
+    width: 150px;
+    padding-bottom: 5px;
+    padding-top: -150px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: .9em;
+    color: var(--background);
+    border: none;
+    border-radius: 3px;
+    background-color: black;
 }
 
 

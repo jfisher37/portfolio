@@ -11,7 +11,8 @@ const mainEl = document.getElementById("main");
 let linkEls = document.querySelectorAll(".nav-link");
 const navSmallSelectBtn = document.getElementById("menu-select-s");
 const menuIconEl = document.getElementById("icon-container");
-const footerEl = document.getElementById("footer")
+const footerEl = document.getElementById("footer");
+
 
 let activeLink = "about";
 let initWidth = window.innerWidth;
@@ -33,6 +34,34 @@ const mainBig = () => {
       break;
   }
 };
+
+// makes form handler for contact form
+
+const contactFormHandler = (name, email, message) => {
+    console.log(name);
+    console.log(email);
+    console.log(message);
+}
+
+// creates form elements and the submit event
+
+const createForm = () => {
+const formEl = document.getElementById("contact-form");
+const nameInputEl = document.getElementById ("name-input");
+const emailInputEl = document.getElementById("email-input");
+const messageInputEl = document.getElementById("message-input");
+const formBtn = document.getElementById("contact-button");
+    console.log(formEl);
+    console.log(mainEl);
+formEl.addEventListener("submit", (e) => {
+        e.preventDefault();
+        contactFormHandler(nameInputEl.value, emailInputEl.value, messageInputEl.value);
+        formBtn.setAttribute("class", "submitted");
+        formBtn.disabled = true;
+        formBtn.innerHTML = "Thank You!"
+})
+}
+
 
 // the actual function that changes the small nav menu icon's appearance
 
@@ -63,6 +92,9 @@ const linksForBig = () => {
       });
       link.setAttribute("class", "nav-link active");
       mainEl.innerHTML = mainBig();
+      if (link.dataset.loc === "contact"){
+          createForm();
+      }
     });
   });
 };
