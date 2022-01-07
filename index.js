@@ -22,7 +22,7 @@ let initWidth = window.innerWidth;
 const mainBig = () => {
   switch (activeLink) {
     case "about":
-        footerEl.setAttribute("class", "footer");
+        footerEl.setAttribute("class", "footer-about");
       return about();
     case "work":
         footerEl.setAttribute("class", "work-footer");

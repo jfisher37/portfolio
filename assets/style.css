@@ -22,6 +22,12 @@ body {
     }
 }
 
+/* indentation */
+
+.indent {
+    margin-left: 40px;
+}
+
 /* large nav styles */
 
 #nav-contain {
@@ -215,6 +221,7 @@ p2 {
 #joey-photo {
     height: 250px;
     width: 250px;
+    margin-bottom: 25px;
     animation: 1.2s ease 0s normal forwards 1 fade-in;
 }
 
@@ -311,18 +318,6 @@ p2 {
     filter: blur(0px) grayscale(100%);
 }
 
-/* @keyframes img-normal {
-    from {
-        filter: blur(0px) grayscale(100%);
-    }
-    to {
-        filter: blur(3px) grayscale(0%);
-    }
-} */
-
-/* #grid-contain a:active > .work-img {
-    animation: 10s ease 0s normal forwards infinite img-normal;
-} */
 
 .work-title {
     position: absolute;
@@ -339,13 +334,6 @@ p2 {
     transform: translateY(0);
     transition: transform 1s ease, color 1s ease, background-color 1s ease;
 }
-/* If title is too long */
-/* .big-title {
-    font-size: 1em;
-    padding-top: 12.5px;
-    padding-bottom: 12.5px;
-
-} */
 
 #grid-contain a:hover > .work-title,
 #grid-contain a:focus > .work-title {
@@ -372,18 +360,6 @@ p2 {
     display: flex;
     justify-content: flex-start;
 }
-
-/* for role-stack ul with too much text */
-/* .big-role-stack {
-    font-size: .6em;
-} */
-
-/* #grid-contain a:hover > .role-stack,
-#grid-contain a:focus > .role-stack {
-    display: inline-block;
-    z-index: 2;
-    opacity: 1;
-} */
 
 #grid-contain a:hover > .role-stack,
 #grid-contain a:focus > .role-stack {
@@ -415,6 +391,7 @@ p2 {
 }
 
 /* contact page */
+
 #contact-page {
     width: 100%;
     height: 100%;
@@ -478,28 +455,10 @@ p2 {
     display: flex;
     width: 100%;
     opacity: 0;
-    /* bottom: 0; */
-    /* margin-bottom: -8px; */
     align-items: flex-end;
     justify-content: flex-end;
     animation: 1.2s ease 1.8s normal forwards 1 fade-in;
 }
-
-/* #contact-button {
-   height: 30px;
-   width: 150px;
-   padding-bottom: 5px;
-   padding-top: -150px;
-   text-align: center;
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   font-size: .9em;
-   color: var(--background);
-   background-color: black;
-   border: none;
-   box-shadow: 0px 2px 3px 1px rgba(0, 0, 0, 0.23);
-} */
 
 .not-submitted {
     height: 30px;
@@ -589,46 +548,64 @@ footer {
     .s-row-2 {
         grid-row-start: second;
         grid-row-end: third;
-        animation: 1.2s ease 1.1s normal forwards 1 fade-in;
+        animation: 1.2s ease .8s normal forwards 1 fade-in;
     }
     
     .s-row-3 {
         grid-row-start: third;
         grid-row-end: fourth;
-        animation: 1.2s ease 1.8s normal forwards 1 fade-in;
+        animation: 1.2s ease 1.2s normal forwards 1 fade-in;
     }
     
     .s-row-4 {
         grid-row-start: fourth;
         grid-row-end: fifth;
-        animation: 1.2s ease 2.5s normal forwards 1 fade-in;
+        animation: 1.2s ease 1.6s normal forwards 1 fade-in;
     }
 
     .s-row-5 {
         grid-row-start: fifth;
         grid-row-end: sixth;
-        animation: 1.2s ease 3.2s normal forwards 1 fade-in;
+        animation: 1.2s ease 2s normal forwards 1 fade-in;
     }
 
     .s-row-6 {
         grid-row-start: sixth;
         grid-row-end: seventh;
-        animation: 1.2s ease 3.9s normal forwards 1 fade-in;
+        animation: 1.2s ease 2.4s normal forwards 1 fade-in;
     }
 
     .s-row-7 {
         grid-row-start: seventh;
         grid-row-end: eighth;
-        animation: 1.2s ease 4.6s normal forwards 1 fade-in;
+        animation: 1.2s ease 2.8s normal forwards 1 fade-in;
     }
 
     .s-row-8 {
         grid-row-start: eighth;
         grid-row-end: ninth;
-        animation: 1.2s ease 5.3s normal forwards 1 fade-in;
+        animation: 1.2s ease 3.2s normal forwards 1 fade-in;
+    }
+
+    #about-page {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    #joey-photo {
+        margin-bottom: 50px;
     }
 
 
+/* footer for about on smaller screens */
+
+    .footer-about {
+        margin-top: 100px;
+        position: relative;
+    }
 }
 /* smaller-screen-specific styles */
 
@@ -671,6 +648,33 @@ footer {
         padding-bottom: 10px;
         border-bottom: solid var(--main) 3px;
     }
+
+    /* about me for smaller screens */
+
+    #about-page {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    
+    #about-section {
+        justify-content: flex-start;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    #about-text {
+        margin-top: 20px;
+        border-left: none;
+    }
+
+    #about-label {
+        border-bottom: solid var(--main) 3px;
+        padding-bottom: 10px;
+    }
+
 }
 
 @media only screen and (max-width: 600px) {
