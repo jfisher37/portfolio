@@ -24,9 +24,9 @@ body {
 
 /* indentation */
 
-.indent {
+/* .indent {
     margin-left: 40px;
-}
+} */
 
 /* large nav styles */
 
@@ -540,6 +540,8 @@ footer {
     display: flex;
     justify-content: flex-end;
     position: absolute;
+    /* opacity: 0;
+    animation: 1.5s ease 1.8s normal forwards 1 fade-in; */
 }
 
 /* footer for work page so it doesn't appear mid-screen */
