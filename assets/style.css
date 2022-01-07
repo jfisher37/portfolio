@@ -562,9 +562,79 @@ footer {
     height: 50px;
     width: 50px;
 }
+
+/* small-mid-size screens */
+
+@media only screen and (max-width: 900px) {
+
+    /* work page made into single column */
+
+    #grid-contain {
+        grid-template-columns: [first] 50% [second];
+        grid-template-rows: [first] 250px [second] 250px [third] 250px [fourth] 250px [fifth] 250px [sixth] 250px [seventh] 250px [eighth] 250px [ninth];
+    }
+
+    
+    .col-2-item {
+        grid-column-start: first;
+        grid-column-end: second;
+    }
+
+    .s-row-1 {
+        grid-row-start: first;
+        grid-row-end: second;
+        animation: 1.2s ease .4s normal forwards 1 fade-in;
+    }
+    
+    .s-row-2 {
+        grid-row-start: second;
+        grid-row-end: third;
+        animation: 1.2s ease 1.1s normal forwards 1 fade-in;
+    }
+    
+    .s-row-3 {
+        grid-row-start: third;
+        grid-row-end: fourth;
+        animation: 1.2s ease 1.8s normal forwards 1 fade-in;
+    }
+    
+    .s-row-4 {
+        grid-row-start: fourth;
+        grid-row-end: fifth;
+        animation: 1.2s ease 2.5s normal forwards 1 fade-in;
+    }
+
+    .s-row-5 {
+        grid-row-start: fifth;
+        grid-row-end: sixth;
+        animation: 1.2s ease 3.2s normal forwards 1 fade-in;
+    }
+
+    .s-row-6 {
+        grid-row-start: sixth;
+        grid-row-end: seventh;
+        animation: 1.2s ease 3.9s normal forwards 1 fade-in;
+    }
+
+    .s-row-7 {
+        grid-row-start: seventh;
+        grid-row-end: eighth;
+        animation: 1.2s ease 4.6s normal forwards 1 fade-in;
+    }
+
+    .s-row-8 {
+        grid-row-start: eighth;
+        grid-row-end: ninth;
+        animation: 1.2s ease 5.3s normal forwards 1 fade-in;
+    }
+
+
+}
 /* smaller-screen-specific styles */
 
 @media only screen and (max-width: 790px) {
+
+    /* small nav styles */
     #nav-list{
         display: none;
     }
@@ -581,5 +651,34 @@ footer {
 
     #menu-select-s{
         display: inherit;
+    }
+
+    /* work title moved to top */
+
+    #work-page {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #grid-contain {
+        border-left: none;
+        margin-top: 50px;
+    }
+
+    #work-label {
+        width: 300px;
+        text-align: center;
+        padding-bottom: 10px;
+        border-bottom: solid var(--main) 3px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+
+    /* make work items larger on phone screens */
+    #grid-contain {
+        grid-template-columns: [first] 70% [second];
+        grid-template-rows: [first] 200px [second] 200px [third] 200px [fourth] 200px [fifth] 200px [sixth] 200px [seventh] 200px [eighth] 200px [ninth];
+
     }
 }
