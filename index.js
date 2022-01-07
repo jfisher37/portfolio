@@ -11,6 +11,7 @@ const mainEl = document.getElementById("main");
 let linkEls = document.querySelectorAll(".nav-link");
 const navSmallSelectBtn = document.getElementById("menu-select-s");
 const menuIconEl = document.getElementById("icon-container");
+const footerEl = document.getElementById("footer")
 
 let activeLink = "about";
 let initWidth = window.innerWidth;
@@ -20,10 +21,13 @@ let initWidth = window.innerWidth;
 const mainBig = () => {
   switch (activeLink) {
     case "about":
+        footerEl.setAttribute("class", "footer");
       return about();
     case "work":
+        footerEl.setAttribute("class", "work-footer");
       return work();
     case "contact":
+        footerEl.setAttribute("class", "footer");
       return contact();
     default:
       break;

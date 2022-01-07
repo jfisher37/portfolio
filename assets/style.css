@@ -476,13 +476,17 @@ p2 {
 /* footer */
 
 footer {
-    margin-top: 75px;
-    /* margin-right: 20%; */
     bottom: 0;
     width: 98%;
     display: flex;
     justify-content: flex-end;
     position: absolute;
+}
+
+/* footer for work page so it doesn't appear mid-screen */
+.work-footer {
+    margin-top: 100px;
+    position: relative;
 }
 
 .footer-icon {
