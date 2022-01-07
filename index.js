@@ -161,8 +161,10 @@ const linksForSmall = () => {
       e.preventDefault();
       activeLink = link.dataset.loc;
       mainEl.innerHTML = mainBig();
+      if (link.dataset.loc === "contact") {
+        createForm();
+      };
       toggleTinyNavSelector();
-      console.log("Shouldn't be here...");
       changeIcon(menuIconEl);
     });
   });
