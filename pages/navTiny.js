@@ -10,7 +10,7 @@ const navTiny = () => {
         <li class="nav-link" data-loc="contact" tabindex="0">
             Contact Me
         </li>
-        <li class="nav-link"><a class="inactive" href="./assets/pdf/Resume_Joey Fisher.pdf" tabindex="0">
+        <li class="nav-link"><a class="inactive" href="./assets/pdf/Resume_Joey Fisher.pdf" target="blank_" tabindex="0">
             Resume
         </a></li>
     </ul>

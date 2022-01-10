@@ -119,6 +119,7 @@ menuIconEl.addEventListener("click", (e) => {
 
 const linksForBig = () => {
   linkEls.forEach((link) => {
+    if (link.dataset.loc){
     if (activeLink === link.dataset.loc) {
       link.setAttribute("class", "nav-link active");
     } else {
@@ -140,7 +141,7 @@ const linksForBig = () => {
       if (link.dataset.loc === "work") {
         // createWorkClasses();
       }
-    });
+    })};
   });
 };
 
@@ -211,6 +212,7 @@ const generateWorkMobileHrefs = () => {
 
 const linksForSmall = () => {
   linkEls.forEach((link) => {
+    if (link.dataset.loc){
     link.addEventListener("click", (e) => {
       e.preventDefault();
       activeLink = link.dataset.loc;
@@ -224,7 +226,7 @@ const linksForSmall = () => {
       toggleTinyNavSelector();
       changeIcon(menuIconEl);
     });
-  });
+  }});
 };
 
 // generates links based on screen size
