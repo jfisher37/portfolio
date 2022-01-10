@@ -4,7 +4,7 @@ const contact = () => {
     <p2 id="contact-label">
         Contact Me
     </p2>
-    <form id="contact-form">
+    <form id="contact-form" netlify>
         <section id="name-email">
         <label for="name" id="name-label">
             Name:
