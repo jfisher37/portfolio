@@ -7,7 +7,7 @@ const about = () => {
             About Me
         </p2>
         <p id="about-text">
-            <span class="indent"> I </span> am an aspiring web developer, currently studying at Penn LPS's Bootcamp. My background is in education. I have my M.S.Ed from UPenn, with a specialization in second language acquisition. So, as you might have guessed, I'm a huge language nerd - I'm fluent in Spanish, Portuguese, Japanese, HTML, CSS, and Javascript. Oh, and English too, I guess. 
+            <span class="indent"> I </span> am a full-stack web developer based in Philadelphia, PA. In addition to web development, I have a background in second language education, with an M.S.Ed from the University of Pennsylvania. Basically, I'm a huge language nerd - I'm fluent in Spanish, Portuguese, Japanese, HTML, CSS, and Javascript. And English too, I guess. 
         </p>
     </section>
   </div>
