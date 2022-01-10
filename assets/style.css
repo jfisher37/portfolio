@@ -41,6 +41,7 @@ body {
     font-weight: 900;
     font-size: 1.3em;
     margin-right: 1em;
+    cursor: pointer;
 }
 
 #nav-list {
@@ -460,9 +461,9 @@ p2 {
 #message-contain {
     display: flex;
     justify-content: flex-start;
-    align-items: center;
+    align-items: flex-end;
     width: 330px;
-    height: 100%;
+    height: 117%;
     flex-wrap: wrap;
     margin-left: 15%;
     margin-bottom: 20px;
@@ -472,6 +473,7 @@ p2 {
 
 #message-contain label {
     margin-bottom: 10px;
+    margin-top: -9px;
 }
 
 #email-input {
@@ -489,8 +491,9 @@ p2 {
 }
 
 #message-input{
-    width: 330px;
-    max-height: 330px;
+    max-width: 330px;
+    min-width: 330px;
+    max-height: 165px;
     min-height: 165px;
     bottom: 0;
     font-size: .6em;
@@ -504,7 +507,7 @@ p2 {
     opacity: 0;
     align-items: flex-end;
     justify-content: flex-end;
-    animation: 1.2s ease 1.8s normal forwards 1 fade-in;
+    animation: 1.2s ease 1.1s normal forwards 1 fade-in;
 }
 
 .not-submitted {
@@ -586,7 +589,11 @@ footer {
     #name-email {
         align-items: center;
         flex-direction: column;
-        width: 100%;
+        width: 330px;
+    }
+
+    #email-input, #name-input {
+        width: 75%
     }
     
     #email-label {
@@ -599,11 +606,14 @@ footer {
 
     #message-contain label {
         margin-bottom: 20px;
+        margin-top: 0;
     }
     
     #message-contain {
         flex-direction: column;
+        align-items: center;
         width: 100%;
+        height: 100%;
         margin-left: 0;
         margin-bottom: 20px;
         margin-top: 10%;

@@ -10,6 +10,7 @@ let linkEls = document.querySelectorAll(".nav-link");
 const navSmallSelectBtn = document.getElementById("menu-select-s");
 const menuIconEl = document.getElementById("icon-container");
 const footerEl = document.getElementById("footer");
+const titleJoeyEl = document.getElementById("joey");
 
 let activeLink = "about";
 let initWidth = window.innerWidth;
@@ -35,6 +36,14 @@ const mainBig = () => {
       break;
   }
 };
+
+// brings you back to about me page on title click
+
+titleJoeyEl.addEventListener("click", (e) => {
+  // e.preventDefault();
+  activeLink = "about";
+  mainEl.innerHTML = mainBig();
+})
 
 // makes form handler for contact form
 
