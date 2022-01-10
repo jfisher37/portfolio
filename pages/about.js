@@ -1,7 +1,7 @@
 const about = () => {
     return `
     <div id="about-page">
-    <img id="joey-photo" alt="A photo of me" src="assets/images/placeholder_300x300.jpeg">
+    <img id="joey-photo" alt="A photo of me" src="./assets/images/joey_color.png">
     <section id="about-section">
         <p2 id="about-label">
             About Me
