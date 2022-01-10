@@ -138,7 +138,7 @@ const linksForBig = () => {
         createForm();
       }
       if (link.dataset.loc === "work") {
-        createWorkClasses();
+        // createWorkClasses();
       }
     });
   });
