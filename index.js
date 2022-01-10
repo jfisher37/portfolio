@@ -47,11 +47,11 @@ titleJoeyEl.addEventListener("click", (e) => {
 
 // makes form handler for contact form
 
-const contactFormHandler = (name, email, message) => {
-  console.log(name);
-  console.log(email);
-  console.log(message);
-};
+// const contactFormHandler = (name, email, message) => {
+//   console.log(name);
+//   console.log(email);
+//   console.log(message);
+// };
 
 // creates form elements and the submit event
 
@@ -77,30 +77,30 @@ const createForm = () => {
 
 // unfocuses work a el on click
 
-const createWorkClasses = () => {
-  const workPageEl = document.getElementById("work-page");
-  const aTagEls = workPageEl.querySelectorAll("a");
-  const gridContainEl = document.getElementById("grid-contain");
-  const workLabelEl = document.getElementById("work-label");
-  console.log(aTagEls);
+// const createWorkClasses = () => {
+//   const workPageEl = document.getElementById("work-page");
+//   const aTagEls = workPageEl.querySelectorAll("a");
+//   const gridContainEl = document.getElementById("grid-contain");
+//   const workLabelEl = document.getElementById("work-label");
+//   console.log(aTagEls);
 
-  workLabelEl.addEventListener("focus", () => {
-    console.log("HERE!!!");
-  });
+//   workLabelEl.addEventListener("focus", () => {
+//     console.log("HERE!!!");
+//   });
 
-  aTagEls.forEach((tag) => {
-    const roleStackEl = tag.querySelector(".role-stack");
-    const workImgEl = tag.querySelector(".work-img");
-    const workTitleEl = tag.querySelector(".work-title");
-    tag.addEventListener("click", (e) => {
-      console.log(roleStackEl);
-      console.log(workImgEl);
-      console.log(workTitleEl);
-      console.log(linkEls);
-      workLabelEl.focus();
-    });
-  });
-};
+//   aTagEls.forEach((tag) => {
+//     const roleStackEl = tag.querySelector(".role-stack");
+//     const workImgEl = tag.querySelector(".work-img");
+//     const workTitleEl = tag.querySelector(".work-title");
+//     tag.addEventListener("click", (e) => {
+//       console.log(roleStackEl);
+//       console.log(workImgEl);
+//       console.log(workTitleEl);
+//       console.log(linkEls);
+//       workLabelEl.focus();
+//     });
+//   });
+// };
 
 // the actual function that changes the small nav menu icon's appearance
 
