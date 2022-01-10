@@ -5,7 +5,7 @@ const work = () => {
         My Work
     </p2>
     <div id="grid-contain">
-        <a class="col-1-item row-1-item s-row-1" href="https://github.com/jfisher37/prequel" target="blank_" tabindex="0">
+        <a class="col-1-item row-1-item s-row-1" href="https://thawing-castle-85641.herokuapp.com/" target="blank_" tabindex="0">
             <img class="work-img" src="./assets/images/prequel.png" alt="Screenshot of the Prequel app">
             <p3 class="work-title">
                 Prequel
@@ -19,7 +19,7 @@ const work = () => {
                 </li>
             </ul>
         </a>
-        <a class="col-2-item row-1-item s-row-2" href="https://github.com/jfisher37/new2town"  target="blank_" tabindex="0">
+        <a class="col-2-item row-1-item s-row-2" href="https://new2town-jfisher37.herokuapp.com/login"  target="blank_" tabindex="0">
             <img class="work-img" src="./assets/images/new2town.png" alt="Screenshot of the New2Town app">
             <p3 class="work-title">
                 New2Town
@@ -33,7 +33,7 @@ const work = () => {
                 </li>
             </ul>
         </a>
-        <a class="col-1-item row-2-item s-row-3" href="https://github.com/jfisher37/got-you-cupboard" target="blank_" tabindex="0">
+        <a class="col-1-item row-2-item s-row-3" href="https://jfisher37.github.io/got-you-cupboard/" target="blank_" tabindex="0">
             <img class="work-img" src="./assets/images/cupboard.png" alt="Screenshot of the Got You Cupboard app">
             <p3 class="work-title big-title">
                 Got You Cupboard
@@ -47,7 +47,7 @@ const work = () => {
                 </li>
             </ul>
         </a>
-        <a class="col-2-item row-2-item s-row-4" href="https://github.com/jfisher37/fitness-tracker" target="blank_" tabindex="0">
+        <a class="col-2-item row-2-item s-row-4" href="https://fitness-tracker-jfisher37.herokuapp.com/?id=618204727550ce046fd6b466" target="blank_" tabindex="0">
             <img class="work-img" src="./assets/images/fitness.png" alt="Screenshot of Fitness Tracker app">
             <p3 class="work-title big-title">
                 Fitness Tracker
@@ -61,7 +61,7 @@ const work = () => {
                 </li>
             </ul>
         </a>
-        <a class="col-1-item row-3-item s-row-5" href="https://github.com/jfisher37/tech-blog" target="blank_" tabindex="0">
+        <a class="col-1-item row-3-item s-row-5" href="https://infinite-spire-15099.herokuapp.com/" target="blank_" tabindex="0">
             <img class="work-img" src="./assets/images/tech_blog.png" alt="Screenshot of Tech Blog app">
             <p3 class="work-title">
                 Tech Blog
@@ -75,10 +75,10 @@ const work = () => {
                 </li>
             </ul>
         </a>
-        <a class="col-2-item row-3-item s-row-6" href="https://github.com/jfisher37/employee-tracker" target="blank_" tabindex="0">
+        <a class="col-2-item row-3-item s-row-6" href="https://github.com/jfisher37/employee-database" target="blank_" tabindex="0">
             <img class="work-img" src="./assets/images/employee_tracker.png" alt="Screenshot of Employee Tracker app">
             <p3 class="work-title big-title">
-                Employee Tracker
+                Employee Database
             </p3>
             <ul class="role-stack">
                 <li class="role">
