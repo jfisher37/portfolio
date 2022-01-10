@@ -64,11 +64,11 @@ const createForm = () => {
 
   formEl.addEventListener("submit", (e) => {
     e.preventDefault();
-    contactFormHandler(
-      nameInputEl.value,
-      emailInputEl.value,
-      messageInputEl.value
-    );
+    // contactFormHandler(
+    //   nameInputEl.value,
+    //   emailInputEl.value,
+    //   messageInputEl.value
+    // );
     formBtn.setAttribute("class", "submitted");
     formBtn.disabled = true;
     formBtn.innerHTML = "Thank You!";
