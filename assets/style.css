@@ -271,19 +271,33 @@ p2 {
     grid-template-columns: [first] 35% [second] 35% [third];
     grid-template-rows: [first] 250px [second] 250px [third] 250px [fourth] 250px [fifth];
     border-left: solid var(--main) 3px;
+    transition: height 10s ease-in-out;
     /* padding-left: 1px; */
 }
 
-#grid-contain a {
+#grid-contain.zoom {
+    display: flex;
+    justify-content: center;
+    width: 99%;
+    height: 500px;
+    padding-left: 13%;
+    padding-right: 13%;
+    /* margin-left: 10%; */
+}
+
+#grid-contain article {
     position: relative;
     height: 100%;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    opacity: 0;
-    
+    opacity: 0;    
 }
+
+#grid-contain article.art-zoom {
+
+} 
 
 
 
@@ -338,10 +352,18 @@ p2 {
     transition: filter 1s ease;
 }
 
-#grid-contain a:hover > .work-img,
-#grid-contain a:focus > .work-img {
+#grid-contain article {
+    cursor: pointer;
+}
+
+#grid-contain article:hover > .work-img,
+#grid-contain article:focus > .work-img {
     filter: blur(0px) grayscale(100%);
 }
+
+/* #grid-contain article:focus ~ article {
+    display: none;
+} */
 
 
 .work-title {
@@ -360,8 +382,8 @@ p2 {
     transition: transform 1s ease, color 1s ease, background-color 1s ease;
 }
 
-#grid-contain a:hover > .work-title,
-#grid-contain a:focus > .work-title {
+#grid-contain article:hover > .work-title,
+#grid-contain article:focus > .work-title {
     transform:translateY(-80%);
     color: var(--main);
     background-color: black;
@@ -391,10 +413,10 @@ p2 {
     padding-top: 50px;
 }
 
-#grid-contain a:hover > .role-stack,
-#grid-contain a:focus > .role-stack,
-#grid-contain a:hover > .role-stack-mobile,
-#grid-contain a:focus > .role-stack-mobile {
+#grid-contain article:hover > .role-stack,
+#grid-contain article:focus > .role-stack,
+#grid-contain article:hover > .role-stack-mobile,
+#grid-contain article:focus > .role-stack-mobile {
     display: inline-block;
     z-index: 2;
     opacity: 1;
