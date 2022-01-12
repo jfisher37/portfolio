@@ -462,6 +462,23 @@ p2 {
     font-weight: 700;
 }
 
+.work-links, .work-desc {
+    display: none;
+    margin-bottom: 3%;
+}
+
+.work-links {
+    margin-top: 3%;
+    justify-content: center;
+}
+
+.work-links a {
+    margin: 0 2% 0 2%;
+    font-weight: 700;
+}
+
+
+
 /* contact page */
 
 #contact-page {
