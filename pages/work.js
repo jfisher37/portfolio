@@ -15,7 +15,7 @@ const work = () => {
                     <b>Role:</b> Back End Lead, Front End Developer
                 </li>
                 <li class="stack">
-                    <b>Stack:</b> MERN, GraphQl
+                    <b>Stack:</b> MERN, GraphQL
                 </li>
             </ul>
         </a>
