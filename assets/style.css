@@ -426,10 +426,6 @@ p2 {
     /* align-items: flex-end; */
 }
 
-.role-stack-mobile {
-    margin-top: 20px;
-    padding-top: 50px;
-}
 
 #grid-contain article:hover > .role-stack,
 #grid-contain article:focus > .role-stack,
@@ -633,6 +629,17 @@ footer {
 
 /* small-mid-size screens */
 
+@media only screen and (max-width: 1150px) {
+    
+    .role-stack{
+        font-size: .5em;
+    }
+    
+    .role-stack-mobile {
+        font-size: .45em;
+    }
+}
+
 @media only screen and (max-width: 983px) {
     
     /* contact page once it starts to get tight */
@@ -702,6 +709,12 @@ footer {
     #grid-contain {
         grid-template-columns: [first] 50% [second];
         grid-template-rows: [first] 250px [second] 250px [third] 250px [fourth] 250px [fifth] 250px [sixth] 250px [seventh] 250px [eighth] 250px [ninth];
+    }
+
+    /* Make prequel margin-top heigher for role-stack */
+
+    #prequel-article .role-stack .work-links{
+        margin-top: 40px;
     }
 
     

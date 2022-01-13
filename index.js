@@ -25,11 +25,11 @@ const mainBig = () => {
       return about();
     case "work":
       footerEl.setAttribute("class", "work-footer");
-      if (!isMobile()) {
+      // if (!isMobile()) {
         return work();
-      } else {
-        return workMobile();
-      }
+      // } else {
+        // return workMobile();
+      // }
     case "contact":
       footerEl.setAttribute("class", "footer-contact");
       return contact();
@@ -221,12 +221,25 @@ const linksForSmall = () => {
       if (link.dataset.loc === "contact") {
         createForm();
       }
-      if (link.dataset.loc === "work" && isMobile()) {
-        generateWorkMobileHrefs();
-      }
+
       if (link.dataset.loc === "work") {
         workFocusToggler()
+
+        if (isMobile()){
+          const roleStackEls = document.querySelectorAll(".role-stack")
+          console.log(roleStackEls);
+          roleStackEls.forEach((el) => {
+            // const initStyle = el.getAttribute("style")
+            // console.log(el.getAttribute("style"))
+            el.classList.add("role-stack-mobile");
+            // console.log(el.getAttribute("style"))
+          })
+        }
       }
+
+      // if (link.dataset.loc === "work" && isMobile()) {
+       
+      // }
       toggleTinyNavSelector();
       changeIcon(menuIconEl);
     });

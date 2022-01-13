@@ -5,7 +5,7 @@ const work = () => {
         My Work
     </p2>
     <div id="grid-contain">
-        <article class="col-1-item row-1-item s-row-1" tabindex="0">
+        <article class="col-1-item row-1-item s-row-1" tabindex="0" id="prequel-article">
             <img class="work-img" src="./assets/images/prequel.png" alt="Screenshot of the Prequel app">
             <p3 class="work-title">
                 Prequel
