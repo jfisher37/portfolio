@@ -4,6 +4,7 @@ import contact from "./pages/contact.js";
 import navTiny from "./pages/navTiny.js";
 import isMobile from "./utils/isMobile.js";
 import workMobile from "./pages/workMobile.js";
+import workFocusToggler from "./utils/workFocusToggler.js";
 
 const mainEl = document.getElementById("main");
 let linkEls = document.querySelectorAll(".nav-link");
@@ -139,7 +140,7 @@ const linksForBig = () => {
         createForm();
       }
       if (link.dataset.loc === "work") {
-        // createWorkClasses();
+        workFocusToggler()
       }
     })};
   });
@@ -222,6 +223,9 @@ const linksForSmall = () => {
       }
       if (link.dataset.loc === "work" && isMobile()) {
         generateWorkMobileHrefs();
+      }
+      if (link.dataset.loc === "work") {
+        workFocusToggler()
       }
       toggleTinyNavSelector();
       changeIcon(menuIconEl);

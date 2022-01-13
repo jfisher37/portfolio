@@ -22,7 +22,7 @@ const workFocusToggler = () => {
             for (let i = 0; i < articleEls.length; i++) {
                     articleEls[i].setAttribute("style", "display: none;");
             }
-            console.log(articleCopy);
+
             gridContainEl.setAttribute("style", "grid-template-columns: [first] 70% [second]; grid-template-rows: [first] 500px [second];");
             gridContainEl.classList.add("zoom");
 
@@ -55,7 +55,10 @@ const workFocusToggler = () => {
                 roleStackEl.removeAttribute("style");
                 linksEl.removeAttribute("style");
                 descEl.removeAttribute("style");
+
+                if(devEl){
                 devEl.setAttribute("style", initDevStyle);
+                };
 
                 articleCopy.addEventListener("click", articleClick);
                 articleCopy.removeChild(exitBtnEl);
@@ -73,4 +76,4 @@ const workFocusToggler = () => {
 
 }
 
-workFocusToggler();
+export default workFocusToggler;
