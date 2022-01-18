@@ -427,6 +427,7 @@ p2 {
 }
 
 
+
 #grid-contain article:hover > .role-stack,
 #grid-contain article:focus > .role-stack,
 #grid-contain article:hover > .role-stack-mobile,
@@ -643,7 +644,9 @@ footer {
 
     .role-stack-mobile {
         font-size: .45em;
-        height: 125px;
+        height: 110px;
+        margin-top: 25px;
+        padding-top: 8px;
     }
 }
 
