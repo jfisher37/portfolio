@@ -448,23 +448,23 @@ p2 {
 }
 
 .stack {
-    margin-top: 3%;
+    margin-top: 15px;
     text-align: left;
 }
 
 .in-development {
-    margin-bottom: 5%; 
+    margin-bottom: 20px; 
     text-align: center;
     font-weight: 700;
 }
 
 .work-links, .work-desc {
     display: none;
-    margin-bottom: 3%;
+    margin-bottom: 15px;
 }
 
 .work-links {
-    margin-top: 3%;
+    margin-top: 15px;
     justify-content: center;
 }
 
@@ -634,7 +634,7 @@ footer {
     .role-stack{
         font-size: .5em;
     }
-    
+
     .role-stack-mobile {
         font-size: .45em;
     }
@@ -876,16 +876,6 @@ footer {
 
 }
 
-@media only screen and (max-width: 600px) {
-
-    /* make work items larger on phone screens */
-    #grid-contain {
-        grid-template-columns: [first] 70% [second];
-        grid-template-rows: [first] 200px [second] 200px [third] 200px [fourth] 200px [fifth] 200px [sixth] 200px [seventh] 200px [eighth] 200px [ninth];
-
-    }
-}
-
 
 /* footer changes by height */
 
@@ -893,6 +883,35 @@ footer {
     .footer-about {
         margin-top: 100px;
         position: relative;
+    }
+
+/* role-stack margin changes */
+
+    
+    .stack {
+        margin-top: 10px;
+    }
+    
+    .in-development {
+        margin-bottom: 15px; 
+    }
+    
+    .work-links, .work-desc {
+        margin-bottom: 10px;
+    }
+    
+    .work-links {
+        margin-top: 10px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+
+    /* make work items larger on phone screens */
+    #grid-contain {
+        grid-template-columns: [first] 70% [second];
+        grid-template-rows: [first] 200px [second] 200px [third] 200px [fourth] 200px [fifth] 200px [sixth] 200px [seventh] 200px [eighth] 200px [ninth];
+
     }
 }
 
