@@ -141,7 +141,7 @@ const linksForBig = () => {
         createForm();
       }
       if (link.dataset.loc === "work") {
-        workFocusToggler()
+        workFocusToggler(isMobile())
       }
     })};
   });
@@ -168,7 +168,7 @@ navSmallSelectBtn.addEventListener("click", (e) => {
   } else {
     mainEl.innerHTML = mainBig();
     if (activeLink === "work") {
-      workFocusToggler();
+      workFocusToggler(isMobile());
     } 
   }
   toggleTinyNavSelector();
@@ -227,7 +227,7 @@ const linksForSmall = () => {
       }
 
       if (link.dataset.loc === "work") {
-        workFocusToggler()
+        workFocusToggler(isMobile())
 
         if (isMobile()){
           const roleStackEls = document.querySelectorAll(".role-stack")

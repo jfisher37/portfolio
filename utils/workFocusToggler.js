@@ -1,81 +1,105 @@
-const workFocusToggler = () => {
-    const articleEls = document.getElementsByTagName("article");
-    const gridContainEl = document.getElementById("grid-contain");
-    
-    
-    Array.from(articleEls).forEach((article) => {
-        article.addEventListener("click", function articleClick(e) {
-            e.preventDefault();
-            const articleCopy = article;
-            const linksEl = articleCopy.querySelector(".work-links");
-            const descEl = articleCopy.querySelector(".work-desc");
-            const roleStackEl = articleCopy.querySelector(".role-stack");
-            const titleEl = articleCopy.querySelector(".work-title");
-            const imgEl = articleCopy.querySelector(".work-img");
-            let devEl;
-            let initDevStyle;
+const workFocusToggler = (isMobile) => {
+  const articleEls = document.getElementsByTagName("article");
+  const gridContainEl = document.getElementById("grid-contain");
+  console.log(isMobile);
 
-            if (roleStackEl.querySelector(".in-development")){
-                devEl = roleStackEl.querySelector(".in-development");
-                initDevStyle = devEl.getAttribute("style");
-                devEl.setAttribute("style", `margin-bottom: 0%; margin-top: 4%; `)
-            }
+  Array.from(articleEls).forEach((article) => {
+    article.addEventListener("click", function articleClick(e) {
+      e.preventDefault();
+      const articleCopy = article;
+      const linksEl = articleCopy.querySelector(".work-links");
+      const descEl = articleCopy.querySelector(".work-desc");
+      const roleStackEl = articleCopy.querySelector(".role-stack");
+      const titleEl = articleCopy.querySelector(".work-title");
+      const imgEl = articleCopy.querySelector(".work-img");
+      let devEl;
+      let initDevStyle;
 
-            for (let i = 0; i < articleEls.length; i++) {
-                    articleEls[i].setAttribute("style", "display: none;");
-            }
+      if (roleStackEl.querySelector(".in-development")) {
+        devEl = roleStackEl.querySelector(".in-development");
+        initDevStyle = devEl.getAttribute("style");
+        devEl.setAttribute("style", `margin-bottom: 0%; margin-top: 4%; `);
+      }
 
-            gridContainEl.setAttribute("style", "grid-template-columns: [first] 70% [second]; grid-template-rows: [first] 500px [second];");
-            gridContainEl.classList.add("zoom");
+      for (let i = 0; i < articleEls.length; i++) {
+        articleEls[i].setAttribute("style", "display: none;");
+      }
 
-            imgEl.setAttribute("style", "filter: blur(0px) grayscale(100%);");
-            titleEl.setAttribute("style", "width: 80%; transform:translateY(-140%); color: var(--main); background-color: black;");
-            roleStackEl.setAttribute("style", "width: 80%; height: 250px; display: flex; z-index: 2; opacity: 1;");
+      gridContainEl.setAttribute(
+        "style",
+        "grid-template-columns: [first] 70% [second]; grid-template-rows: [first] 500px [second];"
+      );
+      gridContainEl.classList.add("zoom");
 
-            linksEl.setAttribute("style", "display: flex");
-            descEl.setAttribute("style", "display: initial");
+      imgEl.setAttribute("style", "filter: blur(0px) grayscale(100%);");
 
+      if (isMobile) {
+        titleEl.setAttribute(
+          "style",
+          "width: 235px; transform:translateY(-140%); color: var(--main); background-color: black;"
+        );
+        roleStackEl.setAttribute(
+          "style",
+          "width: 235px; height: 250px; display: flex; z-index: 2; opacity: 1;"
+        );
+      } else {
+        titleEl.setAttribute(
+          "style",
+          "width: 80%; transform:translateY(-140%); color: var(--main); background-color: black;"
+        );
+        roleStackEl.setAttribute(
+          "style",
+          "width: 80%; height: 250px; display: flex; z-index: 2; opacity: 1;"
+        );
+      }
 
-            const exitBtnEl = document.createElement("button");
-            exitBtnEl.innerHTML = `<i class="fas fa-arrow-circle-left"></i>`
-            exitBtnEl.setAttribute("class", "exit-btn");
+      linksEl.setAttribute("style", "display: flex");
+      descEl.setAttribute("style", "display: initial");
 
-            articleCopy.appendChild(exitBtnEl);
+      const exitBtnEl = document.createElement("button");
+      exitBtnEl.innerHTML = `<i class="fas fa-arrow-circle-left"></i>`;
+      exitBtnEl.setAttribute("class", "exit-btn");
 
-            gridContainEl.appendChild(articleCopy);
-            articleCopy.setAttribute("style", `grid-column-start: first; grid-column-end: second; grid-row-start: first; grid-row-end: second; height: 100%; width: 100%; animation: 1.2s ease 0.1s normal forwards 1 fade-in;
-            `);
+      articleCopy.appendChild(exitBtnEl);
 
-            articleCopy.removeEventListener("click", articleClick);
+      gridContainEl.appendChild(articleCopy);
+      articleCopy.setAttribute(
+        "style",
+        `grid-column-start: first; grid-column-end: second; grid-row-start: first; grid-row-end: second; height: 100%; width: 100%; animation: 1.2s ease 0.1s normal forwards 1 fade-in;
+            `
+      );
 
-            exitBtnEl.addEventListener("click", (e) => {
-                e.preventDefault();
-                e.stopPropagation();
+      articleCopy.removeEventListener("click", articleClick);
 
-                imgEl.removeAttribute("style");
-                titleEl.removeAttribute("style");
-                roleStackEl.removeAttribute("style");
-                linksEl.removeAttribute("style");
-                descEl.removeAttribute("style");
+      exitBtnEl.addEventListener("click", (e) => {
+        e.preventDefault();
+        e.stopPropagation();
 
-                if(devEl){
-                devEl.setAttribute("style", initDevStyle);
-                };
+        imgEl.removeAttribute("style");
+        titleEl.removeAttribute("style");
+        roleStackEl.removeAttribute("style");
+        linksEl.removeAttribute("style");
+        descEl.removeAttribute("style");
 
-                articleCopy.addEventListener("click", articleClick);
-                articleCopy.removeChild(exitBtnEl);
-                gridContainEl.removeChild(articleCopy);
-                gridContainEl.appendChild(article);
-                for (let i = 0; i < articleEls.length; i++) {
-                    articleEls[i].setAttribute("style", "display: flex; opacity: 1; animation: none;");
-            }
-            gridContainEl.removeAttribute("style");
-            gridContainEl.classList.remove("zoom");
-            })
-           
-        })
-    })
+        if (devEl) {
+          devEl.setAttribute("style", initDevStyle);
+        }
 
-}
+        articleCopy.addEventListener("click", articleClick);
+        articleCopy.removeChild(exitBtnEl);
+        gridContainEl.removeChild(articleCopy);
+        gridContainEl.appendChild(article);
+        for (let i = 0; i < articleEls.length; i++) {
+          articleEls[i].setAttribute(
+            "style",
+            "display: flex; opacity: 1; animation: none;"
+          );
+        }
+        gridContainEl.removeAttribute("style");
+        gridContainEl.classList.remove("zoom");
+      });
+    });
+  });
+};
 
 export default workFocusToggler;
