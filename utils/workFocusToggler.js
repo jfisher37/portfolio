@@ -1,7 +1,6 @@
 const workFocusToggler = (isMobile) => {
   const articleEls = document.getElementsByTagName("article");
   const gridContainEl = document.getElementById("grid-contain");
-  console.log(isMobile);
 
   Array.from(articleEls).forEach((article) => {
     article.addEventListener("click", function articleClick(e) {
@@ -40,7 +39,7 @@ const workFocusToggler = (isMobile) => {
         );
         roleStackEl.setAttribute(
           "style",
-          "width: 235px; height: 250px; display: flex; z-index: 2; opacity: 1;"
+          "width: 235px; height: 250px; display: flex; z-index: 2; opacity: 1; justify-content: space-evenly; line-height: .9em"
         );
       } else {
         titleEl.setAttribute(

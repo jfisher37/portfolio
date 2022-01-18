@@ -231,7 +231,7 @@ const linksForSmall = () => {
 
         if (isMobile()){
           const roleStackEls = document.querySelectorAll(".role-stack")
-          console.log(roleStackEls);
+
           roleStackEls.forEach((el) => {
             // const initStyle = el.getAttribute("style")
             // console.log(el.getAttribute("style"))
