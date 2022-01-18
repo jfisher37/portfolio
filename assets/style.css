@@ -556,6 +556,7 @@ p2 {
     font-size: .6em;
     padding-left: 10px;
     padding-right: 5px;
+    resize: none;
 }
 
 #button-contain {
