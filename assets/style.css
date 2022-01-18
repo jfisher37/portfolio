@@ -647,7 +647,17 @@ footer {
         height: 110px;
         margin-top: 50px;
         padding-top: 0;
+        justify-content: space-around;
     }
+
+    .role-stack-mobile .stack, .role-stack-mobile .work-links {  
+        margin-top: 0;
+    }
+
+    .role-stack-mobile .in-development, .role-stack-mobile .work-links, .role-stack-mobile .work-desc {  
+        margin-bottom: 0;
+    }
+
 }
 
 @media only screen and (max-width: 983px) {
