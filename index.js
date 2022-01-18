@@ -63,7 +63,7 @@ const createForm = () => {
   const formBtn = document.getElementById("contact-button");
 
   formEl.addEventListener("submit", (e) => {
-    e.preventDefault();
+    // e.preventDefault();
     // contactFormHandler(
     //   nameInputEl.value,
     //   emailInputEl.value,
