@@ -70,9 +70,9 @@ const createForm = () => {
     //   emailInputEl.value,
     //   messageInputEl.value
     // );
-    formBtn.setAttribute("class", "submitted");
-    formBtn.disabled = true;
-    formBtn.innerHTML = "Thank You!";
+    // formBtn.setAttribute("class", "submitted");
+    // formBtn.disabled = true;
+    // formBtn.innerHTML = "Thank You!";
   });
 };
 
@@ -166,6 +166,9 @@ navSmallSelectBtn.addEventListener("click", (e) => {
     linksForSmall();
   } else {
     mainEl.innerHTML = mainBig();
+    if (activeLink === "work") {
+      workFocusToggler();
+    } 
   }
   toggleTinyNavSelector();
 });

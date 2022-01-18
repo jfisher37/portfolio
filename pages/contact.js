@@ -14,7 +14,7 @@ const contact = () => {
         <label for="email" id="email-label">
             Email:
         </label>
-        <input name="email" type="text" placeholder="Email" id="email-input" required>
+        <input name="email" type="email" placeholder="Email" id="email-input" required>
     </section>
     <section id="message-contain">
         <label for="message" id="message-label">
