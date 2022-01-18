@@ -16,6 +16,7 @@ const titleJoeyEl = document.getElementById("joey");
 let activeLink = "about";
 let initWidth = window.innerWidth;
 
+
 //generates pages based on activeLink
 
 const mainBig = () => {

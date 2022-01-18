@@ -2,6 +2,7 @@ const workFocusToggler = () => {
     const articleEls = document.getElementsByTagName("article");
     const gridContainEl = document.getElementById("grid-contain");
     
+    
     Array.from(articleEls).forEach((article) => {
         article.addEventListener("click", function articleClick(e) {
             e.preventDefault();
@@ -13,6 +14,7 @@ const workFocusToggler = () => {
             const imgEl = articleCopy.querySelector(".work-img");
             let devEl;
             let initDevStyle;
+
             if (roleStackEl.querySelector(".in-development")){
                 devEl = roleStackEl.querySelector(".in-development");
                 initDevStyle = devEl.getAttribute("style");

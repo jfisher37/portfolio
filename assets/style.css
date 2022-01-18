@@ -645,8 +645,8 @@ footer {
     .role-stack-mobile {
         font-size: .45em;
         height: 110px;
-        margin-top: 25px;
-        padding-top: 8px;
+        margin-top: 50px;
+        padding-top: 0;
     }
 }
 
