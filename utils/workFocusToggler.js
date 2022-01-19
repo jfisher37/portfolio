@@ -2,10 +2,13 @@ const workFocusToggler = (isMobile) => {
   const articleEls = document.getElementsByTagName("article");
   const gridContainEl = document.getElementById("grid-contain");
   const stylesEl = document.styleSheets[5];
+  
+// rules to be added and deleted based on isMobile
   const toggledStyles = [
       "#grid-contain article:hover > .work-img, #grid-contain article:focus > .work-img { filter: blur(0px) grayscale(100%); }",
       "#grid-contain article:hover > .work-title, #grid-contain article:focus > .work-title { transform: translateY(-80%); color: var(--main); background-color: black; }",
-      "#grid-contain article:hover > .role-stack, #grid-contain article:focus > .role-stack, #grid-contain article:hover > .role-stack-mobile, #grid-contain article:focus > .role-stack-mobile { display: flex; z-index: 2; opacity: 1; }"
+      "#grid-contain article:hover > .role-stack, #grid-contain article:focus > .role-stack, #grid-contain article:hover > .role-stack-mobile, #grid-contain article:focus > .role-stack-mobile { display: flex; z-index: 2; opacity: 1; }",
+      "#prequel-article .role-stack .work-links { margin-top: 40px; }"
 ];
 
 // gets rid of grid-contain hover and focus for mobile devices
@@ -14,7 +17,11 @@ const workFocusToggler = (isMobile) => {
       stylesEl.deleteRule(50);
       stylesEl.deleteRule(51);
       stylesEl.deleteRule(52);
-      console.log(toggledStyles);
+
+      //prequel title margin-top rule deletion
+      stylesEl.rules[77].deleteRule(1);
+      console.log(stylesEl.rules[77].cssRules);
+
   } 
 
 // This is entirely for someone messing in the dev tools (toggling between mobile and not)
@@ -23,6 +30,11 @@ const workFocusToggler = (isMobile) => {
       stylesEl.insertRule(toggledStyles[0], 50);
       stylesEl.insertRule(toggledStyles[1], 52);
       stylesEl.insertRule(toggledStyles[2], 54);
+
+      //prequel title margin-top rule insertion
+      stylesEl.rules[80].insertRule(toggledStyles[3], 1);
+      console.log(stylesEl.rules[80]);
+      
   }
 
   Array.from(articleEls).forEach((article) => {
