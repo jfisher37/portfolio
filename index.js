@@ -13,6 +13,7 @@ const menuIconEl = document.getElementById("icon-container");
 const footerEl = document.getElementById("footer");
 const titleJoeyEl = document.getElementById("joey");
 
+
 let activeLink = "about";
 let initWidth = window.innerWidth;
 
