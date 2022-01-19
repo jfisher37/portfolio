@@ -271,20 +271,49 @@ p2 {
     grid-template-columns: [first] 35% [second] 35% [third];
     grid-template-rows: [first] 250px [second] 250px [third] 250px [fourth] 250px [fifth];
     border-left: solid var(--main) 3px;
+   
     /* padding-left: 1px; */
 }
 
-#grid-contain a {
+#grid-contain.zoom {
+    display: flex;
+    justify-content: center;
+    width: 95%;
+    height: 500px;
+    padding-left: 10%;
+    padding-right: 10%;
+    /* margin-left: 10%; */
+}
+
+#grid-contain article {
     position: relative;
     height: 100%;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    opacity: 0;
-    
+    opacity: 0;   
+    /* transition: all 10s ease-in-out;  */
 }
 
+.exit-btn {
+    top: 20px;
+    left: 20px;
+    position: absolute;
+    z-index: 1;
+    font-weight: 800;
+    font-size: 1.5em;
+    border: none;
+    background-color: black;
+    color: var(--main);
+    height: .8em;
+    width: .8em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    cursor: pointer;
+}
 
 
 .col-1-item {
@@ -338,10 +367,18 @@ p2 {
     transition: filter 1s ease;
 }
 
-#grid-contain a:hover > .work-img,
-#grid-contain a:focus > .work-img {
+#grid-contain article {
+    cursor: pointer;
+}
+
+#grid-contain article:hover > .work-img,
+#grid-contain article:focus > .work-img {
     filter: blur(0px) grayscale(100%);
 }
+
+/* #grid-contain article:focus ~ article {
+    display: none;
+} */
 
 
 .work-title {
@@ -360,8 +397,8 @@ p2 {
     transition: transform 1s ease, color 1s ease, background-color 1s ease;
 }
 
-#grid-contain a:hover > .work-title,
-#grid-contain a:focus > .work-title {
+#grid-contain article:hover > .work-title,
+#grid-contain article:focus > .work-title {
     transform:translateY(-80%);
     color: var(--main);
     background-color: black;
@@ -370,11 +407,12 @@ p2 {
 
 .role-stack, .role-stack-mobile {
     margin-top: 50px;
-    padding-top: 25px;
-    padding-bottom: 5%;
+    padding-top: 15px;
+    /* padding-bottom: 50px; */
     padding-left: 3%;
     padding-right: 3%;
     width: 235px;
+    height: 150px;
     position: absolute;
     color: var(black);
     z-index: 0;
@@ -383,19 +421,18 @@ p2 {
     background-color: var(--main);
     transition: opacity 1s ease .7s;
     display: flex;
-    justify-content: flex-start;
+    flex-direction: column;
+    justify-content: center;
+    /* align-items: flex-end; */
 }
 
-.role-stack-mobile {
-    margin-top: 20px;
-    padding-top: 50px;
-}
 
-#grid-contain a:hover > .role-stack,
-#grid-contain a:focus > .role-stack,
-#grid-contain a:hover > .role-stack-mobile,
-#grid-contain a:focus > .role-stack-mobile {
-    display: inline-block;
+
+#grid-contain article:hover > .role-stack,
+#grid-contain article:focus > .role-stack,
+#grid-contain article:hover > .role-stack-mobile,
+#grid-contain article:focus > .role-stack-mobile {
+    display: flex;
     z-index: 2;
     opacity: 1;
 }
@@ -412,15 +449,32 @@ p2 {
 }
 
 .stack {
-    margin-top: 3%;
+    margin-top: 15px;
     text-align: left;
 }
 
 .in-development {
-    margin-bottom: 5%; 
+    margin-bottom: 20px; 
     text-align: center;
     font-weight: 700;
 }
+
+.work-links, .work-desc {
+    display: none;
+    margin-bottom: 15px;
+}
+
+.work-links {
+    margin-top: 15px;
+    justify-content: center;
+}
+
+.work-links a {
+    margin: 0 2% 0 2%;
+    font-weight: 700;
+}
+
+
 
 /* contact page */
 
@@ -434,14 +488,15 @@ p2 {
 }
 
 #contact-label {
-    width: 250px
+    width: 190px;
+    font-size: 1.8em;
 }
 
 #contact-form {
     display: flex;
     justify-content: flex-start;
     border-left: solid var(--main) 3px;
-    padding-left: 25px;
+    padding-left: 75px;
 }
 
 #name-email {
@@ -465,7 +520,7 @@ p2 {
     width: 330px;
     height: 117%;
     flex-wrap: wrap;
-    margin-left: 15%;
+    margin-left: 50px;
     margin-bottom: 20px;
     animation: 1.2s ease 1.1s normal forwards 1 fade-in;
     opacity: 0;
@@ -476,29 +531,33 @@ p2 {
     margin-top: -9px;
 }
 
-#email-input {
+#email-input, #name-input  {
     font-size: .6em;
     height: 40px;
+    width: 283px;
     padding-top: 5px;
     padding-left: 5px;
 }
 
-#name-input {
+/* #name-input {
     font-size: .6em;
     height: 40px;
+    width: 283px;
     padding-top: 5px;
     padding-left: 5px;
-}
+} */
 
 #message-input{
-    max-width: 330px;
-    min-width: 330px;
-    max-height: 165px;
-    min-height: 165px;
+    max-width: 400px;
+    min-width: 400px;
+    max-height: 202px;
+    min-height: 202px;
     bottom: 0;
+    margin-bottom: 12px;
     font-size: .6em;
     padding-left: 10px;
     padding-right: 5px;
+    resize: none;
 }
 
 #button-contain {
@@ -576,6 +635,31 @@ footer {
 
 /* small-mid-size screens */
 
+@media only screen and (max-width: 1150px) {
+    
+    .role-stack{
+        font-size: .5em;
+        height: 125px;
+    }
+
+    .role-stack-mobile {
+        font-size: .45em;
+        height: 110px;
+        margin-top: 60px;
+        padding-top: 0;
+        justify-content: space-around;
+    }
+
+    .role-stack-mobile .stack, .role-stack-mobile .work-links {  
+        margin-top: 0;
+    }
+
+    .role-stack-mobile .in-development, .role-stack-mobile .work-links, .role-stack-mobile .work-desc {  
+        margin-bottom: 0;
+    }
+
+}
+
 @media only screen and (max-width: 983px) {
     
     /* contact page once it starts to get tight */
@@ -589,11 +673,11 @@ footer {
     #name-email {
         align-items: center;
         flex-direction: column;
-        width: 330px;
+        width: 100%;
     }
 
     #email-input, #name-input {
-        width: 75%
+        width: 283px;
     }
     
     #email-label {
@@ -645,6 +729,12 @@ footer {
     #grid-contain {
         grid-template-columns: [first] 50% [second];
         grid-template-rows: [first] 250px [second] 250px [third] 250px [fourth] 250px [fifth] 250px [sixth] 250px [seventh] 250px [eighth] 250px [ninth];
+    }
+
+    /* Make prequel margin-top heigher for role-stack */
+
+    #prequel-article .role-stack .work-links{
+        margin-top: 40px;
     }
 
     
@@ -806,6 +896,36 @@ footer {
 
 }
 
+
+/* footer changes by height */
+
+@media only screen and (max-height: 685px) {
+    .footer-about {
+        margin-top: 100px;
+        position: relative;
+    }
+
+/* role-stack margin changes */
+
+    
+    .stack {
+        margin-top: 10px;
+    }
+    
+    .in-development {
+        margin-bottom: 15px; 
+    }
+    
+    .work-links, .work-desc {
+        margin-bottom: 10px;
+    }
+    
+    .work-links {
+        margin-top: 10px;
+    }
+
+}
+
 @media only screen and (max-width: 600px) {
 
     /* make work items larger on phone screens */
@@ -816,13 +936,13 @@ footer {
     }
 }
 
+@media only screen and (max-width: 450px) {
 
-/* footer changes by height */
+/* change message input width for smaller screens */
 
-@media only screen and (max-height: 685px) {
-    .footer-about {
-        margin-top: 100px;
-        position: relative;
+    #message-input {
+        max-width: 350px;
+        min-width: 350px;
     }
 }
 

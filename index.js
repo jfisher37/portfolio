@@ -4,6 +4,7 @@ import contact from "./pages/contact.js";
 import navTiny from "./pages/navTiny.js";
 import isMobile from "./utils/isMobile.js";
 import workMobile from "./pages/workMobile.js";
+import workFocusToggler from "./utils/workFocusToggler.js";
 
 const mainEl = document.getElementById("main");
 let linkEls = document.querySelectorAll(".nav-link");
@@ -12,8 +13,10 @@ const menuIconEl = document.getElementById("icon-container");
 const footerEl = document.getElementById("footer");
 const titleJoeyEl = document.getElementById("joey");
 
+
 let activeLink = "about";
 let initWidth = window.innerWidth;
+
 
 //generates pages based on activeLink
 
@@ -24,11 +27,11 @@ const mainBig = () => {
       return about();
     case "work":
       footerEl.setAttribute("class", "work-footer");
-      if (!isMobile()) {
+      // if (!isMobile()) {
         return work();
-      } else {
-        return workMobile();
-      }
+      // } else {
+        // return workMobile();
+      // }
     case "contact":
       footerEl.setAttribute("class", "footer-contact");
       return contact();
@@ -69,9 +72,9 @@ const createForm = () => {
     //   emailInputEl.value,
     //   messageInputEl.value
     // );
-    formBtn.setAttribute("class", "submitted");
-    formBtn.disabled = true;
-    formBtn.innerHTML = "Thank You!";
+    // formBtn.setAttribute("class", "submitted");
+    // formBtn.disabled = true;
+    // formBtn.innerHTML = "Thank You!";
   });
 };
 
@@ -139,7 +142,7 @@ const linksForBig = () => {
         createForm();
       }
       if (link.dataset.loc === "work") {
-        // createWorkClasses();
+        workFocusToggler(isMobile())
       }
     })};
   });
@@ -165,6 +168,9 @@ navSmallSelectBtn.addEventListener("click", (e) => {
     linksForSmall();
   } else {
     mainEl.innerHTML = mainBig();
+    if (activeLink === "work") {
+      workFocusToggler(isMobile());
+    } 
   }
   toggleTinyNavSelector();
 });
@@ -220,9 +226,25 @@ const linksForSmall = () => {
       if (link.dataset.loc === "contact") {
         createForm();
       }
-      if (link.dataset.loc === "work" && isMobile()) {
-        generateWorkMobileHrefs();
+
+      if (link.dataset.loc === "work") {
+        workFocusToggler(isMobile())
+
+        if (isMobile()){
+          const roleStackEls = document.querySelectorAll(".role-stack")
+
+          roleStackEls.forEach((el) => {
+            // const initStyle = el.getAttribute("style")
+            // console.log(el.getAttribute("style"))
+            el.classList.add("role-stack-mobile");
+            // console.log(el.getAttribute("style"))
+          })
+        }
       }
+
+      // if (link.dataset.loc === "work" && isMobile()) {
+       
+      // }
       toggleTinyNavSelector();
       changeIcon(menuIconEl);
     });
