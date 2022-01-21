@@ -103,7 +103,8 @@ const work = () => {
                 <a target="blank_" href="https://github.com/jfisher37/tech-blog">Repo</a>
               </li> 
               <li class="work-desc">
-                <b>Description:</b> This is blog designed for use by other web developers. 
+              (<b>Sample login credentials</b> - <b>Email:</b> marv@hotmail.com <b>Password:</b> password12345) 
+              <br><br> <b>Description:</b> This is a blog designed for use by other web developers. 
              </li>
                 <li class="role">
                 <b>Role:</b> Sole Developer
