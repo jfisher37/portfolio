@@ -18,6 +18,7 @@ let activeLink = "about";
 let initWidth = window.innerWidth;
 
 
+
 //generates pages based on activeLink
 
 const mainBig = () => {
@@ -230,6 +231,11 @@ window.onload = () => {
   mainEl.innerHTML = mainBig();
   generateLinks();
 };
+
+// window.addEventListener("load", () => {
+//   mainEl.innerHTML = mainBig();
+//   generateLinks();
+// });
 
 // what to do if windo crosses 790 threshold
 

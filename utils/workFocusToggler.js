@@ -2,6 +2,7 @@ const workFocusToggler = (isMobile) => {
   const articleEls = document.getElementsByTagName("article");
   const gridContainEl = document.getElementById("grid-contain");
   const stylesEl = document.styleSheets[5];
+
   
 // rules to be added and deleted based on isMobile
   const toggledStyles = [
@@ -12,28 +13,28 @@ const workFocusToggler = (isMobile) => {
 ];
 
 // gets rid of grid-contain hover and focus for mobile devices
-  if (isMobile && stylesEl.rules[50].cssText === toggledStyles[0]) {
-      console.log("MOBILE")
-      stylesEl.deleteRule(50);
-      stylesEl.deleteRule(51);
-      stylesEl.deleteRule(52);
+  if (isMobile && stylesEl.rules[58].cssText === toggledStyles[0]) {
+      stylesEl.deleteRule(58);
+
+      stylesEl.deleteRule(59);
+      stylesEl.deleteRule(60);
 
       //prequel title margin-top rule deletion
-      stylesEl.rules[77].deleteRule(1);
-      console.log(stylesEl.rules[77].cssRules);
+      stylesEl.rules[85].deleteRule(1);
 
   } 
 
 // This is entirely for someone messing in the dev tools (toggling between mobile and not)
-  if (!isMobile && stylesEl.rules[50].cssText !== toggledStyles[0]) {
-
-      stylesEl.insertRule(toggledStyles[0], 50);
-      stylesEl.insertRule(toggledStyles[1], 52);
-      stylesEl.insertRule(toggledStyles[2], 54);
-
+  if (!isMobile && stylesEl.rules[58].cssText !== toggledStyles[0]) {
+      stylesEl.insertRule(toggledStyles[0], 58);
+      
+      stylesEl.insertRule(toggledStyles[1], 60);
+      
+      stylesEl.insertRule(toggledStyles[2], 62);
+     
       //prequel title margin-top rule insertion
-      stylesEl.rules[80].insertRule(toggledStyles[3], 1);
-      console.log(stylesEl.rules[80]);
+      stylesEl.rules[88].insertRule(toggledStyles[3], 1);
+      console.log(stylesEl.rules[88]);
       
   }
 
