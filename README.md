@@ -13,7 +13,7 @@ This is my personal portfolio website, but if you like it, you're more than welc
 - [Questions](#questions)
 
 ## Installation
-To install this project, just git clone it from this repo.
+To install this project, just fork and clone it from this repo.
 
 
 ## Usage
