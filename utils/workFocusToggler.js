@@ -34,7 +34,7 @@ const workFocusToggler = (isMobile) => {
      
       //prequel title margin-top rule insertion
       stylesEl.rules[88].insertRule(toggledStyles[3], 1);
-      console.log(stylesEl.rules[88]);
+      console.log("Someone's fiddling with the mobile simulator in the dev tools...");
       
   }
 
