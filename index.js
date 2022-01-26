@@ -107,9 +107,9 @@ const linksForBig = () => {
         link.setAttribute("class", "nav-link active");
       }
       mainEl.innerHTML = mainBig();
-      if (link.dataset.loc === "contact") {
-        // createForm();
-      }
+      // if (link.dataset.loc === "contact") {
+      //   createForm();
+      // }
       if (link.dataset.loc === "work") {
         workFocusToggler(isMobile())
       }
@@ -192,9 +192,9 @@ const linksForSmall = () => {
       e.preventDefault();
       activeLink = link.dataset.loc;
       mainEl.innerHTML = mainBig();
-      if (link.dataset.loc === "contact") {
-        createForm();
-      }
+      // if (link.dataset.loc === "contact") {
+      //   createForm();
+      // }
 
       if (link.dataset.loc === "work") {
         workFocusToggler(isMobile())
