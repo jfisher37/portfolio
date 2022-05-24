@@ -232,10 +232,6 @@ window.onload = () => {
   generateLinks();
 };
 
-// window.addEventListener("load", () => {
-//   mainEl.innerHTML = mainBig();
-//   generateLinks();
-// });
 
 // what to do if windo crosses 790 threshold
 
